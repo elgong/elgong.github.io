@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>elgong&#39;s Home.</title>
+  
+  <subtitle>Stay Hungry, Stay Foolish</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.elgong.top/"/>
+  <updated>2019-01-17T15:21:14.348Z</updated>
+  <id>http://www.elgong.top/</id>
+  
+  <author>
+    <name>GEL</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>aaaaaa</title>
+    <link href="http://www.elgong.top/2019/01/17/aaaaaa/"/>
+    <id>http://www.elgong.top/2019/01/17/aaaaaa/</id>
+    <published>2019-01-17T15:20:33.000Z</published>
+    <updated>2019-01-17T15:21:14.348Z</updated>
+    
+    <content type="html"><![CDATA[<p>w sad<br>asd s<code>sd s</code><br>    sdsad sadsa# sd as #</p><p>sadsad</p><h1 id="sdasdsadsa"><a href="#sdasdsadsa" class="headerlink" title="sdasdsadsa"></a>sdasdsadsa</h1><p>sadas## sdasdas ##</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;w sad&lt;br&gt;asd s&lt;code&gt;sd s&lt;/code&gt;&lt;br&gt;    sdsad sadsa# sd as #&lt;/p&gt;
+&lt;p&gt;sadsad&lt;/p&gt;
+&lt;h1 id=&quot;sdasdsadsa&quot;&gt;&lt;a href=&quot;#sdasdsadsa&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+    
+      <category term="666" scheme="http://www.elgong.top/tags/666/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My New Post</title>
+    <link href="http://www.elgong.top/2019/01/17/My-New-Post/"/>
+    <id>http://www.elgong.top/2019/01/17/My-New-Post/</id>
+    <published>2019-01-17T15:16:36.000Z</published>
+    <updated>2019-01-17T15:16:55.762Z</updated>
+    
+    <content type="html"><![CDATA[<p>sad asd<br>sad asd as</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;sad asd&lt;br&gt;sad asd as&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="bbbbbbb" scheme="http://www.elgong.top/tags/bbbbbbb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://www.elgong.top/2019/01/17/hello-world/"/>
+    <id>http://www.elgong.top/2019/01/17/hello-world/</id>
+    <published>2019-01-17T09:11:34.961Z</published>
+    <updated>2019-01-17T09:11:34.961Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
