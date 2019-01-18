@@ -95,7 +95,7 @@ menu:
   主页: / || home
   标签: /tags/ || tags
   分类: /categories/ || th
-  关于: /archives/ || archive
+  关于: /about/ || user
   #about: /about/ || user
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -151,10 +151,10 @@ links_layout: block
 #links:
   #Title: http://example.com/
 
-# Sidebar Avatar
+#Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+avatar: /images/avatar.jpg
 
 # Table Of Contents in the Sidebar
 toc:
