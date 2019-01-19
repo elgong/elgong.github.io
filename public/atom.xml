@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.elgong.top/"/>
-  <updated>2019-01-18T06:57:47.057Z</updated>
+  <updated>2019-01-18T07:17:20.024Z</updated>
   <id>http://www.elgong.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图片测试！</title>
+    <link href="http://www.elgong.top/2019/01/18/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95%EF%BC%81/"/>
+    <id>http://www.elgong.top/2019/01/18/图片测试！/</id>
+    <published>2019-01-18T07:11:41.000Z</published>
+    <updated>2019-01-18T07:17:20.024Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h1><p><img src="/2019/01/18/图片测试！/test.jpg" alt="logo"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;测试图片&quot;&gt;&lt;a href=&quot;#测试图片&quot; class=&quot;headerlink&quot; title=&quot;测试图片&quot;&gt;&lt;/a&gt;测试图片&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/2019/01/18/图片测试！/test.jpg&quot; alt=&quot;logo&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="闲聊" scheme="http://www.elgong.top/categories/%E9%97%B2%E8%81%8A/"/>
+    
+    
+      <category term="闲聊" scheme="http://www.elgong.top/tags/%E9%97%B2%E8%81%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>欢迎来我的小屋！</title>
