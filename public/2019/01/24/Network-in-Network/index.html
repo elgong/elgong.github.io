@@ -18,7 +18,7 @@
             if (prompt('请输入文章密码') !== '') {
                 alert('密码错误！');
                 if (history.length === 1) {
-                    location.replace("http://xxxxxxx.xxx"); // 这里替换成你的首页
+                    location.replace("http://elgong.top"); // 这里替换成你的首页
                 } else {
                     history.back();
                 }
@@ -101,20 +101,20 @@
 
 
 
-<meta name="description" content="Network in network （NIN）2014年 论文地址：  https://arxiv.org/abs/1312.4400 论文核心NIN特点:   微型网络:   增强模型在感受野（receptive field）内对局部区域的辨别能力;       GAP全局平均池化:  强化了特征图与分类的对应关系; GAP本身是结构化的正则化器，能避免整体结构的过拟合；     　　卷积层使">
+<meta name="description" content="2014年 论文地址：  https://arxiv.org/abs/1312.4400 论文核心NIN特点:   微型网络:  增强模型在感受野（receptive field）内对局部区域的辨别能力;       GAP全局平均池化:  强化了特征图与分类的对应关系; GAP本身是结构化的正则化器，能避免整体结构的过拟合；     　　卷积层使用线性滤波器（卷积核）来扫描输入，后面接一个非线性">
 <meta name="keywords" content="深度学习论文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Network in Network">
 <meta property="og:url" content="http://www.elgong.top/2019/01/24/Network-in-Network/index.html">
 <meta property="og:site_name" content="elgong&#39;s Home.">
-<meta property="og:description" content="Network in network （NIN）2014年 论文地址：  https://arxiv.org/abs/1312.4400 论文核心NIN特点:   微型网络:   增强模型在感受野（receptive field）内对局部区域的辨别能力;       GAP全局平均池化:  强化了特征图与分类的对应关系; GAP本身是结构化的正则化器，能避免整体结构的过拟合；     　　卷积层使">
+<meta property="og:description" content="2014年 论文地址：  https://arxiv.org/abs/1312.4400 论文核心NIN特点:   微型网络:  增强模型在感受野（receptive field）内对局部区域的辨别能力;       GAP全局平均池化:  强化了特征图与分类的对应关系; GAP本身是结构化的正则化器，能避免整体结构的过拟合；     　　卷积层使用线性滤波器（卷积核）来扫描输入，后面接一个非线性">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.elgong.top/2019/01/24/Network-in-Network/nerworkInNetwork1.png">
 <meta property="og:image" content="http://www.elgong.top/2019/01/24/Network-in-Network/nerworkInNetwork2.png">
-<meta property="og:updated_time" content="2019-01-24T07:14:02.377Z">
+<meta property="og:updated_time" content="2019-01-24T09:02:29.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Network in Network">
-<meta name="twitter:description" content="Network in network （NIN）2014年 论文地址：  https://arxiv.org/abs/1312.4400 论文核心NIN特点:   微型网络:   增强模型在感受野（receptive field）内对局部区域的辨别能力;       GAP全局平均池化:  强化了特征图与分类的对应关系; GAP本身是结构化的正则化器，能避免整体结构的过拟合；     　　卷积层使">
+<meta name="twitter:description" content="2014年 论文地址：  https://arxiv.org/abs/1312.4400 论文核心NIN特点:   微型网络:  增强模型在感受野（receptive field）内对局部区域的辨别能力;       GAP全局平均池化:  强化了特征图与分类的对应关系; GAP本身是结构化的正则化器，能避免整体结构的过拟合；     　　卷积层使用线性滤波器（卷积核）来扫描输入，后面接一个非线性">
 <meta name="twitter:image" content="http://www.elgong.top/2019/01/24/Network-in-Network/nerworkInNetwork1.png">
 
 
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  583 字
+                  575 字
                 </span>
               
 
@@ -441,11 +441,10 @@
       
 
       
-        <h1 id="Network-in-network-（NIN）"><a href="#Network-in-network-（NIN）" class="headerlink" title="Network in network （NIN）"></a>Network in network （NIN）</h1><p><code>2014年</code> 论文地址：  <a href="https://arxiv.org/abs/1312.4400" title="论文地址" target="_blank" rel="noopener">https://arxiv.org/abs/1312.4400</a></p>
+        <p><code>2014年</code> 论文地址：  <a href="https://arxiv.org/abs/1312.4400" title="论文地址" target="_blank" rel="noopener">https://arxiv.org/abs/1312.4400</a></p>
 <h2 id="论文核心"><a href="#论文核心" class="headerlink" title="论文核心"></a>论文核心</h2><p>NIN特点: </p>
 <ul>
-<li><p>微型网络: </p>
-<ul>
+<li>微型网络: <ul>
 <li>增强模型在感受野（receptive field）内对局部区域的辨别能力;  </li>
 </ul>
 </li>
@@ -458,12 +457,11 @@
 </li>
 </ul>
 <blockquote>
-<p>　　卷积层使用线性滤波器（卷积核）来扫描输入，后面接一个非线性激活函数。而卷积核是广义线性模型（generalized linear model ）GLM，抽象程度低（该特征对同一概念的变体是不变的）,用更有效的 <code>非线性函数逼近器</code> 代替 <code>GLM</code> 可以增强局部模型的抽象能力。当样本的隐含概念（latent concept）线性可分时，GLM可以达到很好的抽象程度，例如：这些概念的变体都在GLM分割平面的同一边，而 &lt;font color=red 传统的CNN就默认了这个假设——认为隐含概念（latent concept）是线性可分的。 然而，同一概念的数据通常是非线性流形的（nonlinear manifold），捕捉这些概念的表达通常都是输入的高维非线性函数。在NIN中，GLM用“微型网络”结构替代，该结构是一个<code>非线性函数逼近器</code>。  </p>
+<p>　　卷积层使用线性滤波器（卷积核）来扫描输入，后面接一个非线性激活函数。而卷积核是广义线性模型（generalized linear model ）GLM，抽象程度低（该特征对同一概念的变体是不变的）,用更有效的 <code>非线性函数逼近器</code> 代替 <code>GLM</code> 可以增强局部模型的抽象能力。当样本的隐含概念（latent concept）线性可分时，GLM可以达到很好的抽象程度，例如：这些概念的变体都在GLM分割平面的同一边，而<font color="red">传统的CNN就默认了这个假设——认为隐含概念（latent concept）是线性可分的</font>。然而，同一概念的数据通常是非线性流形的（nonlinear manifold），捕捉这些概念的表达通常都是输入的高维非线性函数。在NIN中，GLM用“微型网络”结构替代，该结构是一个<code>非线性函数逼近器</code>。  </p>
 <p>　　本文作者选择多层感知器实例化微型网络，该感知器是一个通用函数逼近器，也是一个通过反向传播训练的神经网络。</p>
 </blockquote>
-<p><img src="/2019/01/24/Network-in-Network/nerworkInNetwork1.png" alt="logo"><br>该图是 单独的 <code>mlpconv 层</code></p>
+<p><img src="/2019/01/24/Network-in-Network/nerworkInNetwork1.png" alt="logo"><br>该图是 单独的 <code>mlpconv 层</code>。<br>这里有没有尝试过其他微型网络结构？？？？（可创新吗）</p>
 <ul>
-<li>这里有没有尝试过其他微型网络结构？？？？（可创新吗）</li>
 <li><h2 id="NIN-网络结构"><a href="#NIN-网络结构" class="headerlink" title="NIN 网络结构"></a>NIN 网络结构</h2><img src="/2019/01/24/Network-in-Network/nerworkInNetwork2.png" alt="logo"></li>
 </ul>
 <p>　　NIN 的整体结构是一系列 <code>mlpconve层</code> 的堆叠，最上层接一个 <code>GAP层</code> 和 <code>分类层</code>。 <code>mlpconv层</code> 间的子层可以被相加，像CNN和maxout网络一样。上图展示了一个包含三个mlpconv层的NIN。每个mlpconv层，包含一个三层的感知器，NIN和微型网络的层数都是灵活的，可以根据具体任务微调。</p>
@@ -488,7 +486,7 @@
   <p><span>本文标题:</span><a href="/2019/01/24/Network-in-Network/">Network in Network</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 elgong 的个人博客">elgong</a></p>
   <p><span>发布时间:</span>2019年01月24日 - 15:08</p>
-  <p><span>最后更新:</span>2019年01月24日 - 15:14</p>
+  <p><span>最后更新:</span>2019年01月24日 - 17:02</p>
   <p><span>原始链接:</span><a href="/2019/01/24/Network-in-Network/" title="Network in Network">http://www.elgong.top/2019/01/24/Network-in-Network/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.elgong.top/2019/01/24/Network-in-Network/" aria-label="复制成功！"></i></span>
   </p>
@@ -542,6 +540,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/" rel="prev" title="Deep Residual Learning for Image Recognition">
+                Deep Residual Learning for Image Recognition <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -623,7 +625,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -634,7 +636,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -645,7 +647,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -701,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Network-in-network-（NIN）"><span class="nav-number">1.</span> <span class="nav-text">Network in network （NIN）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#论文核心"><span class="nav-number">1.1.</span> <span class="nav-text">论文核心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NIN-网络结构"><span class="nav-number">1.2.</span> <span class="nav-text">NIN 网络结构</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#论文核心"><span class="nav-number">1.</span> <span class="nav-text">论文核心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NIN-网络结构"><span class="nav-number">2.</span> <span class="nav-text">NIN 网络结构</span></a></li></ol></div>
             
 
           </div>
@@ -736,7 +738,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.3k</span>
+    <span title="Site words total count">14.3k</span>
   
 </div>
 
@@ -762,7 +764,7 @@
 <!--
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.3k字</span>
+  <span class="post-count">博客全站共14.3k字</span>
 </div>
 -->
 
@@ -1273,11 +1275,48 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

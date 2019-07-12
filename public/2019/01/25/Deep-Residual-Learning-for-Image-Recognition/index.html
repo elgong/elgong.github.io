@@ -18,7 +18,7 @@
             if (prompt('请输入文章密码') !== '') {
                 alert('密码错误！');
                 if (history.length === 1) {
-                    location.replace("http://xxxxxxx.xxx"); // 这里替换成你的首页
+                    location.replace("http://elgong.top"); // 这里替换成你的首页
                 } else {
                     history.back();
                 }
@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="深度学习论文,">
 
 
 
@@ -101,16 +101,21 @@
 
 
 
+<meta name="description" content="2015年 论文地址：  https://arxiv.org/pdf/1512.03385.pdf 通常情况下 神经网络层越深，特征的抽象程度越高，模型的表达能力越强，语义信息越丰富； 同时，网络越深，退化问题 越难解决;  退化问题是网络加深的障碍　　简单的增加深度，会导致 梯度弥散 或者 梯度爆炸 ,可以通过标准初始化和中间层正则化（batchNorm）解决；但是随着继续增加深度，训练集准确率">
+<meta name="keywords" content="深度学习论文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="333">
-<meta property="og:url" content="http://www.elgong.top/2019/01/18/333/index.html">
+<meta property="og:title" content="Deep Residual Learning for Image Recognition">
+<meta property="og:url" content="http://www.elgong.top/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/index.html">
 <meta property="og:site_name" content="elgong&#39;s Home.">
+<meta property="og:description" content="2015年 论文地址：  https://arxiv.org/pdf/1512.03385.pdf 通常情况下 神经网络层越深，特征的抽象程度越高，模型的表达能力越强，语义信息越丰富； 同时，网络越深，退化问题 越难解决;  退化问题是网络加深的障碍　　简单的增加深度，会导致 梯度弥散 或者 梯度爆炸 ,可以通过标准初始化和中间层正则化（batchNorm）解决；但是随着继续增加深度，训练集准确率">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://www.elgong.top/2019/01/18/333/test.jpg">
-<meta property="og:updated_time" content="2019-01-18T07:25:52.646Z">
+<meta property="og:image" content="http://www.elgong.top/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/resnet1.png">
+<meta property="og:image" content="http://www.elgong.top/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/resnet2.png">
+<meta property="og:updated_time" content="2019-01-26T05:15:34.226Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="333">
-<meta name="twitter:image" content="http://www.elgong.top/2019/01/18/333/test.jpg">
+<meta name="twitter:title" content="Deep Residual Learning for Image Recognition">
+<meta name="twitter:description" content="2015年 论文地址：  https://arxiv.org/pdf/1512.03385.pdf 通常情况下 神经网络层越深，特征的抽象程度越高，模型的表达能力越强，语义信息越丰富； 同时，网络越深，退化问题 越难解决;  退化问题是网络加深的障碍　　简单的增加深度，会导致 梯度弥散 或者 梯度爆炸 ,可以通过标准初始化和中间层正则化（batchNorm）解决；但是随着继续增加深度，训练集准确率">
+<meta name="twitter:image" content="http://www.elgong.top/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/resnet1.png">
 
 
 
@@ -140,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://www.elgong.top/2019/01/18/333/">
+  <link rel="canonical" href="http://www.elgong.top/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/">
 
 
 
 
 
-  <title>333 | elgong's Home.</title>
+  <title>Deep Residual Learning for Image Recognition | elgong's Home.</title>
   
 
 
@@ -305,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.elgong.top/2019/01/18/333/">
+    <link itemprop="mainEntityOfPage" href="http://www.elgong.top/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="elgong">
@@ -322,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">333</h1>
+          <h1 class="post-title" itemprop="name headline">Deep Residual Learning for Image Recognition</h1>
         
 
         <div class="post-meta">
@@ -335,8 +340,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-18T15:25:41+08:00">
-                2019-01-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-25T22:19:29+08:00">
+                2019-01-25
               </time>
             
 
@@ -346,6 +351,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机视觉论文阅读/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机视觉论文阅读</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -354,8 +381,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/18/333/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/18/333/" itemprop="commentCount"></span>
+                <a href="/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -377,7 +404,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0 字
+                  916 字
                 </span>
               
 
@@ -393,7 +420,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -414,7 +441,23 @@
       
 
       
-        <p><img src="/2019/01/18/333/test.jpg" alt="logo"></p>
+        <p><code>2015年</code> 论文地址：  <a href="https://arxiv.org/pdf/1512.03385.pdf&quot;论文地址&quot;" target="_blank" rel="noopener">https://arxiv.org/pdf/1512.03385.pdf</a></p>
+<h2 id="通常情况下"><a href="#通常情况下" class="headerlink" title="通常情况下"></a>通常情况下</h2><ol>
+<li>神经网络层越深，特征的抽象程度越高，模型的表达能力越强，语义信息越丰富；</li>
+<li>同时，网络越深，<code>退化问题</code> 越难解决;</li>
+</ol>
+<h2 id="退化问题是网络加深的障碍"><a href="#退化问题是网络加深的障碍" class="headerlink" title="退化问题是网络加深的障碍"></a>退化问题是网络加深的障碍</h2><p>　　简单的增加深度，会导致 <code>梯度弥散</code> 或者 <code>梯度爆炸</code> ,可以通过标准初始化和中间层正则化（batchNorm）解决；但是随着继续增加深度，训练集准确率饱和，甚至下降（<code>退化问题</code>，不属于过拟合）。</p>
+<p><img src="/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/resnet1.png" alt="logo"></p>
+<p>　　神经网络就像一个｀Function Set｀，网络是输入 x 到输出 out 的映射关系 F，<code>out = F(x)</code> ，所以网络层越深，这个 <code>Set</code> 包含的函数越复杂，那能够拟合的情况就更多（意思是解决的问题就更多），上图是作者在<code>CIFAR-10</code> 数据集上的对比实验，56层网络是在20层网络上的重复叠加（最差也应该是前22层的恒等映射），但是较深网络训练集的误差却比浅层网络的误差更大。这不是过拟合了，过深网络出现了 <code>退化问题</code>。</p>
+<h2 id="本文效果（很大程度上解决了退化问题）："><a href="#本文效果（很大程度上解决了退化问题）：" class="headerlink" title="本文效果（很大程度上解决了退化问题）："></a>本文效果（很大程度上解决了退化问题）：</h2><ol>
+<li>作者在ImageNet上实验了一个152层的残差网络，比VGG深8倍，取得了3.57%的错误率。</li>
+<li>作者通过一系列实验证明了表示的深度（即网络的深度）对很多视觉识别任务都至关重要。仅仅由于使用了非常深的网络，作者就在COCO目标检测数据集上获得了28%的相对提升。</li>
+</ol>
+<h2 id="本文怎么解决退化问题？"><a href="#本文怎么解决退化问题？" class="headerlink" title="本文怎么解决退化问题？"></a>本文怎么解决退化问题？</h2><h3 id="Resnet-结构分析"><a href="#Resnet-结构分析" class="headerlink" title="Resnet 结构分析"></a>Resnet 结构分析</h3><h4 id="ResNet-短连接块"><a href="#ResNet-短连接块" class="headerlink" title="ResNet 短连接块"></a>ResNet 短连接块</h4><p><img src="/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/resnet2.png" alt="logo"><br>作者在《Identity Mapping in Deep Residual Networks 》一文中，推导了为什么短连接更容易训练，也提出了新的短连接块结构。</p>
+<h4 id="为什么-ResNet-build-block-更容易训练？"><a href="#为什么-ResNet-build-block-更容易训练？" class="headerlink" title="为什么 ResNet build block 更容易训练？"></a>为什么 ResNet build block 更容易训练？</h4><h5 id="前向传播中帮助网络中一些层更容易实现恒等映射："><a href="#前向传播中帮助网络中一些层更容易实现恒等映射：" class="headerlink" title="前向传播中帮助网络中一些层更容易实现恒等映射："></a>前向传播中帮助网络中一些层更容易实现恒等映射：</h5><p>　　<strong><em>出现了第一幅图的退化问题，这里假设深层网络的后边层都变成了<font color="red">恒等映射 </font>，那网络就退化成了浅层网络</em></strong>（因为网络很深，所以其中肯定包括了多余的层，这些层会形成<font color="red">恒等映射 </font>关系），原来的直接多个层堆叠的非线性层去直接学习<font color="red"> 恒等映射 </font>优化起来复杂，而加了上图的 <code>短连接</code>块之后，学习<font color="red"> 恒等映射 </font>变容易了。</p>
+<h5 id="反向传播中"><a href="#反向传播中" class="headerlink" title="反向传播中"></a>反向传播中</h5><blockquote>
+<p>　　因为网络中存在<code>恒等映射的短连接通道</code>，假设不加residual模块的输出为h(x)。x=10,h(x)=11,h(x)简化为线性运算Wh​, Wh明显为1.1，加了redidual模块后，F(x)=1, H(x)=F(x)+x=11，F也简化为线性运算,对应的WF为0.1。当标签中的真实值为12，反向传播的损失为1，而对于F中的参数和h中参数回传的损失实际上是一样大的而且梯度都是x的值，但是对于F的参数就从0.1到1.1扩大了十倍多，而h的参数是从1.1到2.1扩大不到2倍，因此redidual模块会明显减小模块中参数的值从而让网络中的参数对反向传导的损失值有更敏感的响应能力，虽然根本上没有解决回传的损失小得问题，但是却让参数减小，相对而言增加了回传损失的效果，也产生了一定的正则化作用。<br><a href="https://blog.csdn.net/weixin_43624538/article/details/85049699?from=timeline&amp;isappinstalled=0&quot;该部分参考这里&quot;" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43624538/article/details/85049699?from=timeline&amp;isappinstalled=0</a></p>
+</blockquote>
 
       
     </div>
@@ -426,6 +469,35 @@
 	<div>
       
         
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/">Deep Residual Learning for Image Recognition</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 elgong 的个人博客">elgong</a></p>
+  <p><span>发布时间:</span>2019年01月25日 - 22:19</p>
+  <p><span>最后更新:</span>2019年01月26日 - 13:15</p>
+  <p><span>原始链接:</span><a href="/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/" title="Deep Residual Learning for Image Recognition">http://www.elgong.top/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.elgong.top/2019/01/25/Deep-Residual-Learning-for-Image-Recognition/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
       
 </div>
     
@@ -436,6 +508,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/深度学习论文/" rel="tag"><i class="fa fa-tag"></i> 深度学习论文</a>
+          
+        </div>
+      
 
       
       
@@ -445,8 +523,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/18/图片测试！/" rel="next" title="图片测试！">
-                <i class="fa fa-chevron-left"></i> 图片测试！
+              <a href="/2019/01/24/Network-in-Network/" rel="next" title="Network in Network">
+                <i class="fa fa-chevron-left"></i> Network in Network
               </a>
             
           </div>
@@ -455,8 +533,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/20/C-梳理笔记/" rel="prev" title="C++梳理笔记">
-                C++梳理笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/01/华为软挑/" rel="prev" title="华为软挑2019">
+                华为软挑2019 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -512,8 +590,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -530,7 +617,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -541,7 +628,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -552,7 +639,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -599,6 +686,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通常情况下"><span class="nav-number">1.</span> <span class="nav-text">通常情况下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#退化问题是网络加深的障碍"><span class="nav-number">2.</span> <span class="nav-text">退化问题是网络加深的障碍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本文效果（很大程度上解决了退化问题）："><span class="nav-number">3.</span> <span class="nav-text">本文效果（很大程度上解决了退化问题）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本文怎么解决退化问题？"><span class="nav-number">4.</span> <span class="nav-text">本文怎么解决退化问题？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Resnet-结构分析"><span class="nav-number">4.1.</span> <span class="nav-text">Resnet 结构分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ResNet-短连接块"><span class="nav-number">4.1.1.</span> <span class="nav-text">ResNet 短连接块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么-ResNet-build-block-更容易训练？"><span class="nav-number">4.1.2.</span> <span class="nav-text">为什么 ResNet build block 更容易训练？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前向传播中帮助网络中一些层更容易实现恒等映射："><span class="nav-number">4.1.2.1.</span> <span class="nav-text">前向传播中帮助网络中一些层更容易实现恒等映射：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#反向传播中"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">反向传播中</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -627,7 +730,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.3k</span>
+    <span title="Site words total count">14.3k</span>
   
 </div>
 
@@ -653,7 +756,7 @@
 <!--
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.3k字</span>
+  <span class="post-count">博客全站共14.3k字</span>
 </div>
 -->
 
@@ -1164,11 +1267,48 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

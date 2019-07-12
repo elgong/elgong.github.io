@@ -9,7 +9,7 @@
             if (prompt('请输入文章密码') !== '{{ page.password }}') {
                 alert('密码错误！');
                 if (history.length === 1) {
-                    location.replace("http://xxxxxxx.xxx"); // 这里替换成你的首页
+                    location.replace("http://elgong.top"); // 这里替换成你的首页
                 } else {
                     history.back();
                 }
@@ -59,7 +59,7 @@
 
 
 {% if theme.baidu_site_verification %}
-  <meta name="baidu-site-verification" content="{{ theme.baidu_site_verification }}" />
+  <meta name="baidu-site-verification" content="jyDXGZofVX" />
 {% endif %}
 
 
