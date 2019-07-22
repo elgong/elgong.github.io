@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.elgong.top/"/>
-  <updated>2019-07-12T12:50:21.714Z</updated>
+  <updated>2019-07-22T01:03:02.455Z</updated>
   <id>http://www.elgong.top/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pandas-数据结构</title>
+    <link href="http://www.elgong.top/2019/07/22/pandas-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <id>http://www.elgong.top/2019/07/22/pandas-数据结构/</id>
+    <published>2019-07-22T01:01:01.000Z</published>
+    <updated>2019-07-22T01:03:02.455Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="pandas-数据结构"><a href="#pandas-数据结构" class="headerlink" title="pandas 数据结构"></a>pandas 数据结构</h1><h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><blockquote><p>Series 是一个带有 名称 和索引的一维数组。</p></blockquote><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// Series 数组生成，指定数据类型</span><br><span class="line">In:   </span><br><span class="line">    user_age = pd.Series(data=[18, 30, 25, 40], dtype=float)</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">        0    18</span><br><span class="line">        1    30</span><br><span class="line">        2    25</span><br><span class="line">        3    40</span><br><span class="line">        dtype: int64</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 增加索引 index</span><br><span class="line">In:   </span><br><span class="line">    user_age.index = [&quot;Tom&quot;, &quot;Bob&quot;, &quot;Mary&quot;, &quot;James&quot;]</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">    Tom      18</span><br><span class="line">    Bob      30</span><br><span class="line">    Mary     25</span><br><span class="line">    James    40</span><br><span class="line">    dtype: int64</span><br><span class="line">    </span><br><span class="line">// 表头</span><br><span class="line">In:</span><br><span class="line">    user_age.index.name(&quot;name&quot;)</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">    name</span><br><span class="line">    Tom      18</span><br><span class="line">    Bob      30</span><br><span class="line">    Mary     25</span><br><span class="line">    James    40</span><br><span class="line">    dtype: int64</span><br></pre></td></tr></table></figure><h2 id="像字典一样使用"><a href="#像字典一样使用" class="headerlink" title="像字典一样使用"></a>像字典一样使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// index 当键值</span><br><span class="line">In: </span><br><span class="line">    user_age[&quot;Tom&quot;]</span><br><span class="line">    user_age.get(&quot;Tom&quot;)</span><br><span class="line"></span><br><span class="line">// 切片-列</span><br><span class="line">In:</span><br><span class="line">    user_age[2:3]</span><br><span class="line">    </span><br><span class="line">// 按条件查找</span><br><span class="line">In:</span><br><span class="line">    user_age[user_age &gt; 30]</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">    name</span><br><span class="line">    James    40.0</span><br><span class="line">    Name: user_age_info, dtype: float64</span><br></pre></td></tr></table></figure><h2 id="像向量一样使用"><a href="#像向量一样使用" class="headerlink" title="像向量一样使用"></a>像向量一样使用</h2><blockquote><p>可以传递给np方法</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 整列加减</span><br><span class="line">In:</span><br><span class="line">    user_age + 1</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">    name</span><br><span class="line">    Tom      19.0</span><br><span class="line">    Bob      31.0</span><br><span class="line">    Mary     26.0</span><br><span class="line">    James    41.0</span><br><span class="line">    Name: user_age_info, dtype: float64</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;pandas-数据结构&quot;&gt;&lt;a href=&quot;#pandas-数据结构&quot; class=&quot;headerlink&quot; title=&quot;pandas 数据结构&quot;&gt;&lt;/a&gt;pandas 数据结构&lt;/h1&gt;&lt;h2 id=&quot;Series&quot;&gt;&lt;a href=&quot;#Series&quot; cla
+      
+    
+    </summary>
+    
+      <category term="pandas系列教程" scheme="http://www.elgong.top/categories/pandas%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="pandas" scheme="http://www.elgong.top/tags/pandas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>评价指标 ROC与AUC</title>
+    <link href="http://www.elgong.top/2019/07/20/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87-ROC%E4%B8%8EAUC/"/>
+    <id>http://www.elgong.top/2019/07/20/评价指标-ROC与AUC/</id>
+    <published>2019-07-20T07:10:00.000Z</published>
+    <updated>2019-07-20T07:20:57.632Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="非均衡分类问题"><a href="#非均衡分类问题" class="headerlink" title="非均衡分类问题"></a>非均衡分类问题</h2><blockquote><p>非均衡分类问题指的是每个类别的错误代价不同。</p><p>比如疾病检测中,有病患者诊断健康的代价，要比健康人诊断成有病（可能性）造成的影响更为严重。</p><p>对于常用的预测模型，通常是有预测的概率值，我们找到一个合适的截断点作为正负类别的界限。显然再不同的任务下，截断点选择是不同的。我们使用Precison 和Recall的新度量指标来针对特定任务下选择合适的截断值。</p></blockquote><div class="table-container"><table><thead><tr><th>真实标签</th><th>预测为正</th><th>预测为反</th></tr></thead><tbody><tr><td>正例</td><td>TP</td><td>FN</td></tr><tr><td>反例</td><td>FP</td><td>TN</td></tr></tbody></table></div><ul><li>Precison(查准率)：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P = TP/(TP+FP)</span><br></pre></td></tr></table></figure><ul><li>Recall(召回率)：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R = TP/(TP+FN)</span><br></pre></td></tr></table></figure><blockquote><p>当正负样本不不均衡,人为修改测试集中的正负比例时, P-R曲线波动很大，但是ROC曲线变化很小。</p></blockquote><h2 id="ROC-曲线"><a href="#ROC-曲线" class="headerlink" title="ROC 曲线"></a>ROC 曲线</h2><blockquote><p>可以研究学习器的泛化性能。</p><h2 id="加图"><a href="#加图" class="headerlink" title="加图"></a>加图</h2><ul><li>横坐标：真阳率，正例被正确预测的概率</li></ul></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FPR = FP/(TN+FP)</span><br></pre></td></tr></table></figure><ul><li>纵坐标：假阳率，负例被预测错误的概率<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TPR = TP/(TP+FN)</span><br></pre></td></tr></table></figure></li></ul><p><strong>==理解四点一线==</strong>：</p><ul><li>(0, 0):  FP = TP = 0, 所有样本预测为负</li><li>(1, 1):  FP = TP = 1, 所有样本预测为正</li><li>(1, 0):  FP = 1, TP = 0, 所有正样本预测为负</li><li>(0, 1):  FP = 0, TP = 1, 完美预测</li><li>对角线：随机猜测的值。</li></ul><h2 id="AUC值"><a href="#AUC值" class="headerlink" title="AUC值"></a>AUC值</h2><p>AUC(Area under Curve) 被定义为ROC曲线的下侧面积。一般在(0.5~1)之间。</p><h3 id="计算方法"><a href="#计算方法" class="headerlink" title="计算方法"></a>计算方法</h3><ol><li><p>几何角度</p><blockquote><p>直接计算曲线下的面积，梯形</p></blockquote></li><li><p>概率角度</p><blockquote><p>任取一对正负样本对，正样本score大于负样本score的概率</p></blockquote></li></ol><h3 id="python-实现"><a href="#python-实现" class="headerlink" title="python 实现"></a>python 实现</h3><p><a href="http://zhuzhuyule.xyz" target="_blank" rel="noopener">链接</a></p><p><img src="/2019/07/20/评价指标-ROC与AUC/test.jpg" alt="logo"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;非均衡分类问题&quot;&gt;&lt;a href=&quot;#非均衡分类问题&quot; class=&quot;headerlink&quot; title=&quot;非均衡分类问题&quot;&gt;&lt;/a&gt;非均衡分类问题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;非均衡分类问题指的是每个类别的错误代价不同。&lt;/p&gt;
+&lt;p&gt;比如疾病检测中
+      
+    
+    </summary>
+    
+      <category term="西瓜书笔记" scheme="http://www.elgong.top/categories/%E8%A5%BF%E7%93%9C%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ROC" scheme="http://www.elgong.top/tags/ROC/"/>
+    
+  </entry>
   
   <entry>
     <title>集成学习-Adaboost</title>

@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="ROC,">
 
 
 
@@ -101,13 +101,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="elgong&#39;s Home.">
-<meta property="og:url" content="http://www.elgong.top/categories/C/index.html">
+<meta name="description" content="非均衡分类问题 非均衡分类问题指的是每个类别的错误代价不同。 比如疾病检测中,有病患者诊断健康的代价，要比健康人诊断成有病（可能性）造成的影响更为严重。 对于常用的预测模型，通常是有预测的概率值，我们找到一个合适的截断点作为正负类别的界限。显然再不同的任务下，截断点选择是不同的。我们使用Precison 和Recall的新度量指标来针对特定任务下选择合适的截断值。      真实标签 预测为正 预">
+<meta name="keywords" content="ROC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="评价指标 ROC与AUC">
+<meta property="og:url" content="http://www.elgong.top/2019/07/20/评价指标-ROC与AUC/index.html">
 <meta property="og:site_name" content="elgong&#39;s Home.">
+<meta property="og:description" content="非均衡分类问题 非均衡分类问题指的是每个类别的错误代价不同。 比如疾病检测中,有病患者诊断健康的代价，要比健康人诊断成有病（可能性）造成的影响更为严重。 对于常用的预测模型，通常是有预测的概率值，我们找到一个合适的截断点作为正负类别的界限。显然再不同的任务下，截断点选择是不同的。我们使用Precison 和Recall的新度量指标来针对特定任务下选择合适的截断值。      真实标签 预测为正 预">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.elgong.top/2019/07/20/评价指标-ROC与AUC/test.jpg">
+<meta property="og:updated_time" content="2019-07-20T07:20:57.632Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="elgong&#39;s Home.">
+<meta name="twitter:title" content="评价指标 ROC与AUC">
+<meta name="twitter:description" content="非均衡分类问题 非均衡分类问题指的是每个类别的错误代价不同。 比如疾病检测中,有病患者诊断健康的代价，要比健康人诊断成有病（可能性）造成的影响更为严重。 对于常用的预测模型，通常是有预测的概率值，我们找到一个合适的截断点作为正负类别的界限。显然再不同的任务下，截断点选择是不同的。我们使用Precison 和Recall的新度量指标来针对特定任务下选择合适的截断值。      真实标签 预测为正 预">
+<meta name="twitter:image" content="http://www.elgong.top/2019/07/20/评价指标-ROC与AUC/test.jpg">
 
 
 
@@ -137,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://www.elgong.top/categories/C/">
+  <link rel="canonical" href="http://www.elgong.top/2019/07/20/评价指标-ROC与AUC/">
 
 
 
 
 
-  <title>Category: C++ | elgong's Home.</title>
+  <title>评价指标 ROC与AUC | elgong's Home.</title>
   
 
 
@@ -162,7 +169,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -288,53 +295,293 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>C++<small>Category</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.elgong.top/2019/07/20/评价指标-ROC与AUC/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elgong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="elgong's Home.">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/01/20/C-梳理笔记/" itemprop="url">
-              
-                <span itemprop="name">C++梳理笔记</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">评价指标 ROC与AUC</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-20T20:30:39+08:00" content="2019-01-20">
-          01-20
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+		  
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-20T15:10:00+08:00">
+                2019-07-20
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/西瓜书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">西瓜书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/20/评价指标-ROC与AUC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/20/评价指标-ROC与AUC/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  429 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="非均衡分类问题"><a href="#非均衡分类问题" class="headerlink" title="非均衡分类问题"></a>非均衡分类问题</h2><blockquote>
+<p>非均衡分类问题指的是每个类别的错误代价不同。</p>
+<p>比如疾病检测中,有病患者诊断健康的代价，要比健康人诊断成有病（可能性）造成的影响更为严重。</p>
+<p>对于常用的预测模型，通常是有预测的概率值，我们找到一个合适的截断点作为正负类别的界限。显然再不同的任务下，截断点选择是不同的。我们使用Precison 和Recall的新度量指标来针对特定任务下选择合适的截断值。</p>
+</blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>真实标签</th>
+<th>预测为正</th>
+<th>预测为反</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正例</td>
+<td>TP</td>
+<td>FN</td>
+</tr>
+<tr>
+<td>反例</td>
+<td>FP</td>
+<td>TN</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Precison(查准率)：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P = TP/(TP+FP)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Recall(召回率)：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R = TP/(TP+FN)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>当正负样本不不均衡,人为修改测试集中的正负比例时, P-R曲线波动很大，但是ROC曲线变化很小。</p>
+</blockquote>
+<h2 id="ROC-曲线"><a href="#ROC-曲线" class="headerlink" title="ROC 曲线"></a>ROC 曲线</h2><blockquote>
+<p>可以研究学习器的泛化性能。</p>
+<h2 id="加图"><a href="#加图" class="headerlink" title="加图"></a>加图</h2><ul>
+<li>横坐标：真阳率，正例被正确预测的概率</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FPR = FP/(TN+FP)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>纵坐标：假阳率，负例被预测错误的概率<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TPR = TP/(TP+FN)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>==理解四点一线==</strong>：</p>
+<ul>
+<li>(0, 0):  FP = TP = 0, 所有样本预测为负</li>
+<li>(1, 1):  FP = TP = 1, 所有样本预测为正</li>
+<li>(1, 0):  FP = 1, TP = 0, 所有正样本预测为负</li>
+<li>(0, 1):  FP = 0, TP = 1, 完美预测</li>
+<li>对角线：随机猜测的值。</li>
+</ul>
+<h2 id="AUC值"><a href="#AUC值" class="headerlink" title="AUC值"></a>AUC值</h2><p>AUC(Area under Curve) 被定义为ROC曲线的下侧面积。一般在(0.5~1)之间。</p>
+<h3 id="计算方法"><a href="#计算方法" class="headerlink" title="计算方法"></a>计算方法</h3><ol>
+<li><p>几何角度</p>
+<blockquote>
+<p>直接计算曲线下的面积，梯形</p>
+</blockquote>
+</li>
+<li><p>概率角度</p>
+<blockquote>
+<p>任取一对正负样本对，正样本score大于负样本score的概率</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="python-实现"><a href="#python-实现" class="headerlink" title="python 实现"></a>python 实现</h3><p><a href="http://zhuzhuyule.xyz" target="_blank" rel="noopener">链接</a></p>
+<p><img src="/2019/07/20/评价指标-ROC与AUC/test.jpg" alt="logo"></p>
 
       
     </div>
+    
+    
+    
 
+	
+	<div>
+      
+        
+      
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ROC/" rel="tag"><i class="fa fa-tag"></i> ROC</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/25/集成学习-Adaboost/" rel="next" title="集成学习-Adaboost">
+                <i class="fa fa-chevron-left"></i> 集成学习-Adaboost
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/22/pandas-数据结构/" rel="prev" title="pandas-数据结构">
+                pandas-数据结构 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -342,6 +589,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -362,8 +616,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -448,6 +711,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#非均衡分类问题"><span class="nav-number">1.</span> <span class="nav-text">非均衡分类问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROC-曲线"><span class="nav-number">2.</span> <span class="nav-text">ROC 曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加图"><span class="nav-number">3.</span> <span class="nav-text">加图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AUC值"><span class="nav-number">4.</span> <span class="nav-text">AUC值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算方法"><span class="nav-number">4.1.</span> <span class="nav-text">计算方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-实现"><span class="nav-number">4.2.</span> <span class="nav-text">python 实现</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -619,6 +898,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
