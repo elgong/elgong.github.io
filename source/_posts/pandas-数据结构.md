@@ -7,12 +7,14 @@ tags: pandas
 ---
 
 # pandas 数据结构
+> pandas 基本操作都很简单，只是在刚开始学习的过程中，容易忘掉一些API，导致完成一些操作时，总会想着翻翻手册，这一系列博客，是对这些方法进行了梳理，可作为入门学习的参考材料。平时经常翻阅。
 
-## Series
+“index” (axis=0, default), “columns” (axis=1)
+## 1. Series
 
 > Series 是一个带有 名称 和索引的一维数组。
 
-### 创建
+### 创建seriex
 
 ```
 // Series 数组生成，指定数据类型
@@ -53,7 +55,7 @@ Out:
 
 ```
 
-## 像字典一样使用
+### 像字典一样使用series
 
 ```
 // index 当键值
@@ -76,7 +78,7 @@ Out:
     
 ```
 
-## 像向量一样使用
+### 像向量一样使用series
 
 > 可以传递给np方法
 
@@ -93,5 +95,41 @@ Out:
     James    41.0
     Name: user_age_info, dtype: float64
 
+
+```
+
+## 2. DataFrame
+
+> DataFrame 是一个带有 名称 和索引的二维数组，像一张Excel表格。
+
+### 创建DataFrame
+
+```
+
+// DataFrame 根据字典生成
+
+In:
+    index = pd.Index(data=["Tom", "Bob", "Mary", "James"], name="name")
+    
+    data = {
+        "age": [18, 30, 40],
+        "city": ["BeiJing", "ShangHai", "HangZhou"]
+    }
+    
+    user_info = pd.DataFrame(data=data, index=index)
+    user_info
+
+Out:
+    
+// DataFrame 根据二维列表生成
+In:
+    data = [[18, "BeiJing"], 
+            [30, "ShangHai"], 
+            [25, "GuangZhou"], 
+            [40, "ShenZhen"]]
+    columns = ["age", "city"]
+    
+    user_info = pd.DataFrame(data=data, index=index, columns=columns)
+    user_info
 
 ```
