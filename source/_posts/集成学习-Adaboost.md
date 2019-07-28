@@ -2,7 +2,7 @@
 title: 集成学习-Adaboost
 date: 2019-06-25 18:57:01
 tags: 集成学习
-categories: 西瓜书笔记
+categories: 机器学习方法
 top: True
 ---
 # Adaboost 算法原理及推导

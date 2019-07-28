@@ -4,7 +4,7 @@ date: 2019-01-25 22:19:29
 categories: 计算机视觉论文阅读
 tags: 深度学习论文
 copyright: true
-top: true
+top:
 ---
 `2015年` 论文地址：  [https://arxiv.org/pdf/1512.03385.pdf](https://arxiv.org/pdf/1512.03385.pdf"论文地址")
 

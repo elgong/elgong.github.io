@@ -2,7 +2,7 @@
 title: 评价指标 ROC与AUC
 mathjax: true
 date: 2019-07-20 15:10:00
-categories: 西瓜书笔记
+categories: 机器学习方法
 tags: ROC
 top: True
 ---

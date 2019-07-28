@@ -1,8 +1,8 @@
 ---
 title: github使用: eclipse 工程同步管理 
 date: 2019-01-19 22:28:19
-categories: 系统环境，github使用
-tags: github, eclipse
+categories: github
+tags: git
 copyright: true
 ---
 # 内容概要

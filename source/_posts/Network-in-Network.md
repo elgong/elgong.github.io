@@ -3,10 +3,9 @@ title: Network in Network
 date: 2019-01-24 15:08:27
 categories: 
 - 计算机视觉论文阅读
-tags: 
-- 深度学习论文
+tags: 深度学习论文
 copyright: true
-top: true
+top:
 ---
 `2014年` 论文地址：  [https://arxiv.org/abs/1312.4400](https://arxiv.org/abs/1312.4400 "论文地址")
 

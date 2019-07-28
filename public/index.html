@@ -1158,8 +1158,8 @@ Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达�
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/西瓜书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">西瓜书笔记</span>
+                  <a href="/categories/机器学习方法/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习方法</span>
                   </a>
                 </span>
 
@@ -1199,7 +1199,7 @@ Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达�
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2k 字
+                  2.2k 字
                 </span>
               
 
@@ -1215,7 +1215,7 @@ Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达�
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  8 分钟
+                  9 分钟
                 </span>
               
             </div>
@@ -1240,9 +1240,12 @@ Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达�
           
           
 逻辑回归就是西瓜书里的对数几率回归，名为回归，实际则是分类算法。其实质是利用线性回归模型的预测结果来逼近真实标记的对数几率。
+一句话概括就是:
+ 
+逻辑回归假设数据服从 **伯努利分布** ,通过 **极大化似然函数** 的方法，运用 **梯度下降** 来求解参数，来达到将数据二分类的目的。
 
-线性模型如何处理二分类问题？
-在处理二分类任务时，我们希望模型能预测样本属于某类别的概率[0, 1]，或者直接输出类别的标签{0, 1}。 线性模型不能直接来完成这项任务
+
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1301,7 +1304,7 @@ Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.elgong.top/2019/04/20/第四章-决策树/">
+    <link itemprop="mainEntityOfPage" href="http://www.elgong.top/2019/04/20/决策树-1基本概念/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="elgong">
@@ -1320,7 +1323,7 @@ Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/20/第四章-决策树/" itemprop="url">第四章-决策树</a></h1>
+                <a class="post-title-link" href="/2019/04/20/决策树-1基本概念/" itemprop="url">决策树-1基本概念</a></h1>
         
 
         <div class="post-meta">
@@ -1356,8 +1359,8 @@ Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达�
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/西瓜书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">西瓜书笔记</span>
+                  <a href="/categories/机器学习方法/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习方法</span>
                   </a>
                 </span>
 
@@ -1374,8 +1377,8 @@ Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/20/第四章-决策树/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/20/第四章-决策树/" itemprop="commentCount"></span>
+                <a href="/2019/04/20/决策树-1基本概念/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/20/决策树-1基本概念/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1397,7 +1400,7 @@ Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达�
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  766 字
+                  1.7k 字
                 </span>
               
 
@@ -1413,7 +1416,7 @@ Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达�
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -1436,19 +1439,12 @@ Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达�
       
         
           
-          适用任务： 分类、回归
-
-优点：对中间值缺失不敏感，可以处理不相关特征数据。
-缺点：存在过度匹配问题。
-
-数据格式
-有数据集 D = {(x1, y1), (x2, y2), (x3, y3) … (xm, ym)}，总共 m 个样本，样本的属性集合 A = {a1, a2, a3, a4 …}
-
-
+          决策树1- 基本概念决策树
+上图来自西瓜书，是决策树的一种树形。生成决策树的过程，不断的根据样本的属性( 样本的某个特 )划分样本子集。每个结点选择当前最优的属性作为划分依据，将样本集合不断的划分成更小的子集合，直到子集合中样本类别一致时或者没有可以划分的属性值时，则停止划分，标记为叶结点(叶节点代
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/04/20/第四章-决策树/#more" rel="contents">
+            <a class="btn" href="/2019/04/20/决策树-1基本概念/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2360,7 +2356,7 @@ GAP本身是结构化的正则化
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2446,7 +2442,7 @@ GAP本身是结构化的正则化
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.6k</span>
+    <span title="Site words total count">16.7k</span>
   
 </div>
 
@@ -2472,7 +2468,7 @@ GAP本身是结构化的正则化
 <!--
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共15.6k字</span>
+  <span class="post-count">博客全站共16.7k字</span>
 </div>
 -->
 

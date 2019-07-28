@@ -101,20 +101,20 @@
 
 
 
-<meta name="description" content="适用任务： 分类、回归  优点：对中间值缺失不敏感，可以处理不相关特征数据。 缺点：存在过度匹配问题。  数据格式 有数据集 D = {(x1, y1), (x2, y2), (x3, y3) … (xm, ym)}，总共 m 个样本，样本的属性集合 A = {a1, a2, a3, a4 …}  决策树的构建决策树的外貌 上图即决策树的树形。构建决策树过程中， 根据来属性划分 。每个结点选择当前">
+<meta name="description" content="决策树1- 基本概念决策树 上图来自西瓜书，是决策树的一种树形。生成决策树的过程，不断的根据样本的属性( 样本的某个特 )划分样本子集。每个结点选择当前最优的属性作为划分依据，将样本集合不断的划分成更小的子集合，直到子集合中样本类别一致时或者没有可以划分的属性值时，则停止划分，标记为叶结点(叶节点代表一个类别)。 简单的介绍一下决策树的组成元素:  根节点:  所有的训练样本 内部节点:   对应">
 <meta name="keywords" content="决策树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第四章-决策树">
-<meta property="og:url" content="http://www.elgong.top/2019/04/20/第四章-决策树/index.html">
+<meta property="og:title" content="决策树-1基本概念">
+<meta property="og:url" content="http://www.elgong.top/2019/04/20/决策树-1基本概念/index.html">
 <meta property="og:site_name" content="elgong&#39;s Home.">
-<meta property="og:description" content="适用任务： 分类、回归  优点：对中间值缺失不敏感，可以处理不相关特征数据。 缺点：存在过度匹配问题。  数据格式 有数据集 D = {(x1, y1), (x2, y2), (x3, y3) … (xm, ym)}，总共 m 个样本，样本的属性集合 A = {a1, a2, a3, a4 …}  决策树的构建决策树的外貌 上图即决策树的树形。构建决策树过程中， 根据来属性划分 。每个结点选择当前">
+<meta property="og:description" content="决策树1- 基本概念决策树 上图来自西瓜书，是决策树的一种树形。生成决策树的过程，不断的根据样本的属性( 样本的某个特 )划分样本子集。每个结点选择当前最优的属性作为划分依据，将样本集合不断的划分成更小的子集合，直到子集合中样本类别一致时或者没有可以划分的属性值时，则停止划分，标记为叶结点(叶节点代表一个类别)。 简单的介绍一下决策树的组成元素:  根节点:  所有的训练样本 内部节点:   对应">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://www.elgong.top/2019/04/20/第四章-决策树/tree.png">
-<meta property="og:updated_time" content="2019-07-12T12:50:21.714Z">
+<meta property="og:image" content="http://www.elgong.top/2019/04/20/决策树-1基本概念/tree.png">
+<meta property="og:updated_time" content="2019-07-27T13:09:13.653Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第四章-决策树">
-<meta name="twitter:description" content="适用任务： 分类、回归  优点：对中间值缺失不敏感，可以处理不相关特征数据。 缺点：存在过度匹配问题。  数据格式 有数据集 D = {(x1, y1), (x2, y2), (x3, y3) … (xm, ym)}，总共 m 个样本，样本的属性集合 A = {a1, a2, a3, a4 …}  决策树的构建决策树的外貌 上图即决策树的树形。构建决策树过程中， 根据来属性划分 。每个结点选择当前">
-<meta name="twitter:image" content="http://www.elgong.top/2019/04/20/第四章-决策树/tree.png">
+<meta name="twitter:title" content="决策树-1基本概念">
+<meta name="twitter:description" content="决策树1- 基本概念决策树 上图来自西瓜书，是决策树的一种树形。生成决策树的过程，不断的根据样本的属性( 样本的某个特 )划分样本子集。每个结点选择当前最优的属性作为划分依据，将样本集合不断的划分成更小的子集合，直到子集合中样本类别一致时或者没有可以划分的属性值时，则停止划分，标记为叶结点(叶节点代表一个类别)。 简单的介绍一下决策树的组成元素:  根节点:  所有的训练样本 内部节点:   对应">
+<meta name="twitter:image" content="http://www.elgong.top/2019/04/20/决策树-1基本概念/tree.png">
 
 
 
@@ -144,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://www.elgong.top/2019/04/20/第四章-决策树/">
+  <link rel="canonical" href="http://www.elgong.top/2019/04/20/决策树-1基本概念/">
 
 
 
 
 
-  <title>第四章-决策树 | elgong's Home.</title>
+  <title>决策树-1基本概念 | elgong's Home.</title>
   
 
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.elgong.top/2019/04/20/第四章-决策树/">
+    <link itemprop="mainEntityOfPage" href="http://www.elgong.top/2019/04/20/决策树-1基本概念/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="elgong">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第四章-决策树</h1>
+          <h1 class="post-title" itemprop="name headline">决策树-1基本概念</h1>
         
 
         <div class="post-meta">
@@ -362,8 +362,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/西瓜书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">西瓜书笔记</span>
+                  <a href="/categories/机器学习方法/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习方法</span>
                   </a>
                 </span>
 
@@ -380,8 +380,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/20/第四章-决策树/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/20/第四章-决策树/" itemprop="commentCount"></span>
+                <a href="/2019/04/20/决策树-1基本概念/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/20/决策树-1基本概念/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  766 字
+                  1.7k 字
                 </span>
               
 
@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -440,48 +440,101 @@
       
 
       
-        <p>适用任务： 分类、回归</p>
-<blockquote>
-<p>优点：对中间值缺失不敏感，可以处理不相关特征数据。</p>
-<p>缺点：存在过度匹配问题。</p>
-</blockquote>
-<h2 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h2><blockquote>
-<p>有数据集 D = {(x1, y1), (x2, y2), (x3, y3) … (xm, ym)}，总共 m 个样本，样本的属性集合 A = {a1, a2, a3, a4 …}</p>
-</blockquote>
-<h2 id="决策树的构建"><a href="#决策树的构建" class="headerlink" title="决策树的构建"></a>决策树的构建</h2><h3 id="决策树的外貌"><a href="#决策树的外貌" class="headerlink" title="决策树的外貌"></a>决策树的外貌</h3><p><img src="/2019/04/20/第四章-决策树/tree.png" alt="logo"></p>
-<p>上图即决策树的树形。构建决策树过程中，<strong> 根据来属性划分 </strong>。每个结点选择当前最优的属性作为划分依据，将样本集合不断的划分成不同的子集合，子集合中样本类别一致或者没有可以划分的属性值，则停止划分，标记为叶结点。</p>
-<h3 id="递归构建过程"><a href="#递归构建过程" class="headerlink" title="递归构建过程"></a>递归构建过程</h3><blockquote>
-<p>决策树采用递归构建。</p>
-</blockquote>
-<p>待补充</p>
-<h3 id="如何选择最优划分属性？"><a href="#如何选择最优划分属性？" class="headerlink" title="如何选择最优划分属性？"></a>如何选择最优划分属性？</h3><blockquote>
-<p>划分目标: 划分出的新的结点（即样本子集合）尽可能属于同类别，即 <strong>纯度</strong> 越来越高。</p>
-</blockquote>
-<p>因此，需要计算出划分后子集合的 <strong>纯度</strong> ，找到 <strong>纯度</strong> 最高的划分方式。</p>
-<p> <strong>纯度</strong> 的衡量方法:</p>
+        <h1 id="决策树1-基本概念"><a href="#决策树1-基本概念" class="headerlink" title="决策树1- 基本概念"></a>决策树1- 基本概念</h1><h2 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h2><p><img src="/2019/04/20/决策树-1基本概念/tree.png" alt="logo"></p>
+<p>上图来自西瓜书，是决策树的一种树形。生成决策树的过程，不断的<strong>根据样本的属性( 样本的某个特 )划分样本子集</strong>。每个结点选择当前最优的属性作为划分依据，将样本集合不断的划分成更小的子集合，直到子集合中样本类别一致时或者没有可以划分的属性值时，则停止划分，标记为叶结点(叶节点代表一个类别)。</p>
+<p>简单的介绍一下决策树的组成元素:</p>
 <ol>
-<li>信息熵  - information entropy</li>
+<li>根节点:  所有的训练样本</li>
+<li>内部节点:   对应某一个划分属性</li>
+<li>叶节点：   对应某一种决策结果</li>
+<li>判定测试序列：   某个样本在节点中传递的路径</li>
 </ol>
-<ol>
-<li><p>信息增益 - information gain</p>
+<p>所有节点都包含着不同数量的样本。</p>
 <blockquote>
-<p>偏向的属性: 属性可以取的值很多，信息增益相对越大</p>
+<p>以上是分类树的例子，决策树也可以用作回归任务，如CART算法。决策树是GBDT,Xgboost等更高级结构的基础，所以尽量要掌握决策树的原理。</p>
 </blockquote>
-</li>
-</ol>
-<ol>
-<li><p>增益率  - gain ratio</p>
+<h2 id="决策树算法的基本流程"><a href="#决策树算法的基本流程" class="headerlink" title="决策树算法的基本流程"></a>决策树算法的基本流程</h2><p>假设有一个数据集，其中的每个样本有多种特征，每个特征有不同的取值。通过这个数据集来生成一个决策树的一般流程可以归纳为:</p>
+<ul>
+<li>特征选择</li>
+</ul>
 <blockquote>
-<p>偏向的属性: 属性可以取的值很少，信息增益率相对越大</p>
+<p>特征选择就是决策树分叉时，依据新节点的”纯度”，选择最优的划分属性;</p>
 </blockquote>
-</li>
-<li><p>基尼系数  - Gini index</p>
-</li>
+<ul>
+<li>决策树生成</li>
+</ul>
+<blockquote>
+<p>树不断的分叉，直到样本的属性用光，或者树的深度达到了预定值，则结束分叉;</p>
+</blockquote>
+<ul>
+<li>剪枝</li>
+</ul>
+<blockquote>
+<p>如果一直树杈分下去，一定能够使得所有的样本都正确的归类，但这样会产生对训练集的过拟合，泛化能力变差，可以通过剪枝操作来改善泛化能力。</p>
+</blockquote>
+<p>通过这三步，就可以生成一颗决策树了。下面来学习一下具体怎么进行特征的选择和剪枝。</p>
+<h2 id="如何选择最优的划分属性"><a href="#如何选择最优的划分属性" class="headerlink" title="如何选择最优的划分属性?"></a>如何选择最优的划分属性?</h2><blockquote>
+<p>决策树不断分叉的原因，是尽可能的让不同类别的样本划分到不同的节点，同类别的样本划分到同一个节点。而选择最优的划分属性（特征）的过程，相当于是遍历计算出所有特征的结果，找到能使分叉后子集合最 “纯” 的特征，就是最优的划分属性了。<br>所以，该如何定义 “纯” ，需要借助信息论中 “信息熵” 的概念了。</p>
+</blockquote>
+<p><strong>熵</strong> :  表示随机变量不确定性的度量,也就是混乱程度的一种度量。</p>
+<p>假定数据集 <code>D</code> 中第 <code>K</code> 类样本所占的比例为 <script type="math/tex">p_{k}</script>,则信息熵定义为:</p>
+<script type="math/tex; mode=display">\operatorname{Ent}(D)=-\sum_{k=1}^{N} p_{k} \log _{2} p_{k}</script><p>数据集包含的<font color="#FF0000">类别越少时越纯，<code>Ent(D)</code>也越小。</font> </p>
+<h3 id="法1-信息增益"><a href="#法1-信息增益" class="headerlink" title="法1: 信息增益"></a>法1: 信息增益</h3><p>==ID3算法用到信息增益==</p>
+<blockquote>
+<p>直白的讲就是决策树分叉前的信息熵减去分叉后的信息熵。</p>
+<p>信息增益最大的特征就是最佳划分属性。</p>
+</blockquote>
+<p>假定分叉前样本集 <code>D</code> 中的特征 <code>a</code> 有 <code>V</code>个可能的取值 <script type="math/tex">\left\{a^{1}, a^{2}, \ldots, a^{V}\right\}</script> ,当选择 <code>a</code> 做划分属性时，会分<code>V</code>个节点，每个节点上的子样本集合为 <script type="math/tex">D^{v}</script>,同时为不同节点赋权重(按照样本的比例)，于是信息增益为: </p>
+<script type="math/tex; mode=display">\operatorname{Gain}(D, a)=\operatorname{Ent}(D)-\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} \operatorname{Ent}\left(D^{v}\right)</script><p>减数部分也叫<font color="#FF0000"> 条件熵 </font></p>
+<font color="#FF0000">缺点:</font> 分叉时偏好取值较多的属性。
+
+<font color="#FF0000">原因分析:</font>
+
+<ol>
+<li>取值多的特征，样本更分散，所有得到的新节点”纯度” 趋于更高，熵更低，而划分前的增益不变的情况下，该特征增益更大。</li>
+<li>比如，当特征的可能取值数量正好等于样本数量，那条件熵几乎为0，该特征一定会被选择。</li>
 </ol>
-<h3 id="对抗过拟合-—-剪枝处理"><a href="#对抗过拟合-—-剪枝处理" class="headerlink" title="对抗过拟合 — 剪枝处理"></a>对抗过拟合 — 剪枝处理</h3><blockquote>
+<h3 id="法2-信息增益率"><a href="#法2-信息增益率" class="headerlink" title="法2: 信息增益率"></a>法2: 信息增益率</h3><p>==C4.5算法用到信息增率==</p>
+<blockquote>
+<p>相当于在法1基础上，增加了惩罚系数，可取值越多，系数越大。</p>
+</blockquote>
+<script type="math/tex; mode=display">Gain\_ratio\left( D,a \right) =\frac{Gain\left( D,a \right)}{IV\left( a \right)}</script><script type="math/tex; mode=display">\mathrm{IV}(a)=-\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} \log _{2} \frac{\left|D^{v}\right|}{|D|}</script><p><code>IV(a)</code> 是属性 <code>a</code> 的 “固有值”，内部属性。</p>
+<p><font color="#FF0000">缺点:</font> 分叉时偏好取值较少的属性。</p>
+<h3 id="法3：基尼指数"><a href="#法3：基尼指数" class="headerlink" title="法3：基尼指数"></a>法3：基尼指数</h3><p>==CART决策树算法用到基尼指数==</p>
+<blockquote>
+<p>反应从节点样本集合中随机抽取两个样本，类别不一致的概率。</p>
+</blockquote>
+<p>基尼值的定义:</p>
+<script type="math/tex; mode=display">\operatorname{Gini}(D)=\sum_{k=1}^{|\mathcal{Y}|} \sum_{k^{\prime} \neq k} p_{k} p_{k^{\prime}}</script><script type="math/tex; mode=display">=\sum_{k=1}^{|y|} p_{k}\left(1-P_{k}\right)</script><script type="math/tex; mode=display">=1-\sum_{k=1}^{|\mathcal{Y}|} p_{k}^{2}</script><p>基尼指数的定义：</p>
+<script type="math/tex; mode=display">Gini\_index\left( D,a \right) =\sum_{v=1}^V{\frac{\left| D^v \right|}{|D|}}\text{operatorname}Gini\left( D^v \right)</script><p>三种决策树模型：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>特征选择标准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID3</td>
+<td>信息增益</td>
+</tr>
+<tr>
+<td>C4.5</td>
+<td>信息增益率</td>
+</tr>
+<tr>
+<td>CART</td>
+<td>基尼指数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="对抗过拟合-—-剪枝处理"><a href="#对抗过拟合-—-剪枝处理" class="headerlink" title="对抗过拟合 — 剪枝处理"></a>对抗过拟合 — 剪枝处理</h2><blockquote>
 <p>分支太多，容易过拟合，泛化能力变差。所以要适当剪枝，常用方法是<strong>预剪枝</strong>和<strong>后剪枝</strong></p>
 </blockquote>
-<h4 id="预剪枝"><a href="#预剪枝" class="headerlink" title="预剪枝"></a>预剪枝</h4><ol>
+<h3 id="预剪枝"><a href="#预剪枝" class="headerlink" title="预剪枝"></a>预剪枝</h3><ol>
 <li>预剪枝是在决策树生成的过程中，对每个结点在划分前先估计，根据划分前后验证集的精度，来决定是否划分；</li>
 </ol>
 <ol>
@@ -490,7 +543,7 @@
 <ol>
 <li>容易造成欠拟合。</li>
 </ol>
-<h4 id="后剪枝"><a href="#后剪枝" class="headerlink" title="后剪枝"></a>后剪枝</h4><ol>
+<h3 id="后剪枝"><a href="#后剪枝" class="headerlink" title="后剪枝"></a>后剪枝</h3><ol>
 <li>先生成完整的树，再从叶结点往回计算，根据验证集精度是否提升决定是否剪枝；</li>
 </ol>
 <ol>
@@ -518,7 +571,7 @@
 <ul>
 <li>当样本的该属性缺失：则把该样本同时划入所有的子节点，样本权值需要更新为`Wx = rv*Wx。</li>
 </ul>
-<h2 id="常用的决策树算法比较"><a href="#常用的决策树算法比较" class="headerlink" title="常用的决策树算法比较"></a>常用的决策树算法比较</h2>
+
       
     </div>
     
@@ -659,7 +712,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -726,7 +779,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据格式"><span class="nav-number">1.</span> <span class="nav-text">数据格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树的构建"><span class="nav-number">2.</span> <span class="nav-text">决策树的构建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树的外貌"><span class="nav-number">2.1.</span> <span class="nav-text">决策树的外貌</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归构建过程"><span class="nav-number">2.2.</span> <span class="nav-text">递归构建过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何选择最优划分属性？"><span class="nav-number">2.3.</span> <span class="nav-text">如何选择最优划分属性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对抗过拟合-—-剪枝处理"><span class="nav-number">2.4.</span> <span class="nav-text">对抗过拟合 — 剪枝处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#预剪枝"><span class="nav-number">2.4.1.</span> <span class="nav-text">预剪枝</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后剪枝"><span class="nav-number">2.4.2.</span> <span class="nav-text">后剪枝</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性为连续值时？"><span class="nav-number">3.</span> <span class="nav-text">属性为连续值时？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当数据中含有缺失值时？"><span class="nav-number">4.</span> <span class="nav-text">当数据中含有缺失值时？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的决策树算法比较"><span class="nav-number">5.</span> <span class="nav-text">常用的决策树算法比较</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树1-基本概念"><span class="nav-number">1.</span> <span class="nav-text">决策树1- 基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树"><span class="nav-number">1.1.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树算法的基本流程"><span class="nav-number">1.2.</span> <span class="nav-text">决策树算法的基本流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何选择最优的划分属性"><span class="nav-number">1.3.</span> <span class="nav-text">如何选择最优的划分属性?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#法1-信息增益"><span class="nav-number">1.3.1.</span> <span class="nav-text">法1: 信息增益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#法2-信息增益率"><span class="nav-number">1.3.2.</span> <span class="nav-text">法2: 信息增益率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#法3：基尼指数"><span class="nav-number">1.3.3.</span> <span class="nav-text">法3：基尼指数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对抗过拟合-—-剪枝处理"><span class="nav-number">1.4.</span> <span class="nav-text">对抗过拟合 — 剪枝处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预剪枝"><span class="nav-number">1.4.1.</span> <span class="nav-text">预剪枝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后剪枝"><span class="nav-number">1.4.2.</span> <span class="nav-text">后剪枝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性为连续值时？"><span class="nav-number">1.5.</span> <span class="nav-text">属性为连续值时？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当数据中含有缺失值时？"><span class="nav-number">1.6.</span> <span class="nav-text">当数据中含有缺失值时？</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -761,7 +814,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.6k</span>
+    <span title="Site words total count">16.7k</span>
   
 </div>
 
@@ -787,7 +840,7 @@
 <!--
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共15.6k字</span>
+  <span class="post-count">博客全站共16.7k字</span>
 </div>
 -->
 
