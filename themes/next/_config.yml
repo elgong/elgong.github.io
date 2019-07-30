@@ -442,22 +442,24 @@ gitment:
 #           Delicious,StumbleUpon,Pinterest,Facebook,GooglePlus,Slashdot,
 #           Technorati,Posterous,Tumblr,GoogleBookmarks,Newsvine,
 #           Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
+# 文章分享功能
 needmoreshare2:
-  enable: false
+  enable: true
   postbottom:
-    enable: false
+    enable: true
     options:
-      iconStyle: box
+      iconStyle: default
       boxForm: horizontal
       position: bottomCenter
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
   float:
-    enable: false
+    enable: true
     options:
-      iconStyle: box
-      boxForm: horizontal
-      position: middleRight
+      iconStyle: default
+      boxForm: vertical
+      position: topRight
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/

@@ -7,7 +7,11 @@ top: True
 ---
 # Adaboost 算法原理及推导
 
-> Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达到强学习器的效果。其主要的流程是：
+> Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达到强学习器的效果。
+
+> Adaboost 是通过提升错分数据的权重值来改善模型的不足。
+其主要的流程是：
+
 > 1. 先训练一个基学习器；
 > 2. 根据基学习器的表现，改变样本的分布，使得错误分类的样本得到更多的关注；
 > 3. 改变分布后的样本再训练新的基学习器，如此迭代；
@@ -49,25 +53,30 @@ w_{1 i}=\frac{1}{N}, i=1,2, \cdots, N
 $$
 
 步骤2：训练基学习器，改变训练样本分布，迭代训练新的学习器。
-用m=1,2...M 代表迭代的轮数，每轮产生的学习器为
+用m=1,2...M 代表迭代的轮数，每轮产生的学习器为 $$h_{m}(x)$$
 
-$$h_{m}(x)$$,
+- 计算学习器 $$h_{m}(x)$$ 在训练数据集上的分类错误率 $$E_{t}$$ (误差的权值和):
 
-- 计算学习器$$h_{m}(x) 在训练数据集上的分类错误率E_{t}（误差的权值和）：
 
-$$E_{t}=P\left(G_{m}(x) \neq y_{i}\right)$$
+ $$E_{t}=P\left(G_{m}(x) \neq y_{i}\right)$$
 
-$$=\sum_{i=1}^{N} w_{m i} I\left(G_{m}\left(x_{i}\right) \neq y_{i}\right)$$
 
-- 计算学习器$$h_{m}(x)$$的权重α：
+ $$=\sum_{i=1}^{N} w_{m i} I\left(G_{m}\left(x_{i}\right) \neq y_{i}\right)$$
 
-$$\alpha_{m}=\frac{1}{2} \ln \frac{\left(1-E_{m}\right)}{E_{m}}$$
+
+- 计算学习器 $$h_{m}(x)$$ 的权重α：
+
+ $$\alpha_{m}=\frac{1}{2} \ln \frac{\left(1-E_{m}\right)}{E_{m}}$$
 
 - 更新训练集样本权重。
 
 $$D_{m+1}=\left(w_{m+1,1}, w_{m+1,2} \cdots w_{m+1, i} \cdots, w_{m+1, N}\right)$$
 
 $$w_{m+1, i}=\frac{w_{m i}}{Z_{m}} \exp \left(-\alpha_{m} y_{i} G_{m}\left(x_{i}\right)\right), i=1,2, \cdots, N$$
+
+这里的 $$Z_{m}$$ 时规范化因子:
+
+$$Z_{m}=\sum_{i=1}^{N} w_{m i} \exp \left(-\alpha_{m} y_{i} G_{m}\left(x_{i}\right)\right)$$
 
 - 迭代训练学习器
 
