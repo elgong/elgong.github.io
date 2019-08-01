@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>机器学习模型的偏差与方差</title>
+      <link href="/2019/08/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%81%8F%E5%B7%AE%E4%B8%8E%E6%96%B9%E5%B7%AE/"/>
+      <url>/2019/08/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%81%8F%E5%B7%AE%E4%B8%8E%E6%96%B9%E5%B7%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="机器学习的方差与偏差"><a href="#机器学习的方差与偏差" class="headerlink" title="机器学习的方差与偏差"></a>机器学习的方差与偏差</h1><blockquote><p>方差与偏差，总是迷迷糊糊的，每次看了就会，过了就忘。今天看到一个非常棒的解释，迫不及待马上整理下来了。</p></blockquote><h2 id="机器学习的目标函数"><a href="#机器学习的目标函数" class="headerlink" title="机器学习的目标函数"></a>机器学习的目标函数</h2><p>机器学习模型学习的是数据集的条件概率分布，得到一个决策函数。整个学习过程围绕着最小化（或者最大化）目标函数进行优化参数，目标函数的通常形式的定义是：</p><pre><code>Obj = L(θ) + λΩ(θ)</code></pre><p><code>L(θ)</code> 是损失函数，衡量模型对训练集拟合程度的好坏(对应偏差)；</p><p><code>Ω(θ)</code> 是正则项，是衡量模型的复杂程度（对应方差）；</p><font color="#FF0000"> 目标函数定义为损失函数和正则项两部分，是为了平衡模型的偏差和方差（Bias Variance Trade-off）。</font> <h2 id="偏差与学习器"><a href="#偏差与学习器" class="headerlink" title="偏差与学习器"></a>偏差与学习器</h2><blockquote><p>偏差描述了 <font color="#FF0000">学习器的拟合能力</font> （对训练集的）。</p></blockquote><p>学习器在训练集表现越好，损失越低，则模型的偏差越小。</p><h2 id="方差与学习器"><a href="#方差与学习器" class="headerlink" title="方差与学习器"></a>方差与学习器</h2><blockquote><p>方差描述了 <font color="#FF0000"> 学习器的泛化能力</font>(催测试集)。</p></blockquote><p>学习器在测试集表现越好，则模型的方差越低。</p><h2 id="偏差与方差之间的关系"><a href="#偏差与方差之间的关系" class="headerlink" title="偏差与方差之间的关系"></a>偏差与方差之间的关系</h2><blockquote><p>我们最想要的是低偏差，低方差的模型，然而现实很难达到两者都极致的低。有时候需要用提高偏差来降低方差，毕竟模型的泛化能力十分重要。</p></blockquote><p>当损失函数达到极小值，模型对训练集的拟合达到了最佳效果，==对应着低偏差==，而这种情况下，往往对训练集的特点学的过于细微，而缺乏泛化能力。</p><p>根据 ==奥坎姆剃刀原则==, 同样准确率，模型越简单越好，所以通过正则化等方式，削弱模型的拟合能力，降低过拟合的风险。通过提高偏差，来主动降低方差。</p><p>最终我们要平衡方差与偏差，从而得到一个合理的模型。</p><p><img src="/2019/08/01/机器学习模型的偏差与方差/biasvariance.png" alt="biasvariance"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习方法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 方差与偏差 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>XGBoost</title>
       <link href="/2019/07/30/XGBoost/"/>
       <url>/2019/07/30/XGBoost/</url>
