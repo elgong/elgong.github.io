@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[pandas-时间&日期处理]]></title>
+    <url>%2F2019%2F08%2F06%2Fpandas-%E6%97%B6%E9%97%B4-%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86%2F</url>
+    <content type="text"><![CDATA[pandas -5 时间&amp;日期处理pandas 常出现的时间格式 字符串类型 object 一般是字符串类型，pandas 储存string时 使用 narray， 每一个object 是一个指针 datetime 类型 datetime64 timedelta 类型 表示时间差的数据类型 类型转换 object 2 datetime 123456789// 方法1df[1] = pd.to_datetime(df[1], format=&apos;%d.%m.%Y&apos;)# 指定format，速度会加快很多。// 方法2dateStr = &quot;2019-02-03&quot;myDate = datetime.strptime(dateStr, &quot;&quot;%Y-%m-%d&quot;&quot;) datetime 2 object 1234df[&quot;time_list&quot;] = df[&quot;time_list&quot;].strftime(&quot;%Y-%m-%d&quot;)// Y 2019// y 19 datetime 相关操作1234567891011// 查看列元素的年，月，日，星期（整数型）df[&quot;time&quot;].dt.yeardf[&quot;time&quot;].dt.monthdf[&quot;time&quot;].dt.daydf[&quot;time&quot;].dt.weekday # 星期一是0// 一年中的第几天,第几周df[&quot;time&quot;].dt.dayofyeardf[&quot;time&quot;].dt.weekofyear// 查看列元素 某年的数据数量df[df[&quot;time&quot;].dt.year == 2019].shape 时间运算 计算时间差 12345// 计算时间差， 结果为timedeltadf[&quot;时间差&quot;] = df[&quot;时间1&quot;] - df[&quot;时间2&quot;]// 转换成 天数差df[&quot;时间差&quot;].days 计算未来日期 123// N天后的日期// 天 days, 时 hours， 周 weeksdf[&quot;时间&quot;] = df[&quot;时间1&quot;] - timedelta(days=10)]]></content>
+      <categories>
+        <category>pandas系列教程</category>
+      </categories>
+      <tags>
+        <tag>pandas</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[机器学习模型的偏差与方差]]></title>
     <url>%2F2019%2F08%2F01%2F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%81%8F%E5%B7%AE%E4%B8%8E%E6%96%B9%E5%B7%AE%2F</url>
     <content type="text"><![CDATA[机器学习的方差与偏差 方差与偏差，总是迷迷糊糊的，每次看了就会，过了就忘。今天看到一个非常棒的解释，迫不及待马上整理下来了。 机器学习的目标函数机器学习模型学习的是数据集的条件概率分布，得到一个决策函数。整个学习过程围绕着最小化（或者最大化）目标函数进行优化参数，目标函数的通常形式的定义是： Obj = L(θ) + λΩ(θ) L(θ) 是损失函数，衡量模型对训练集拟合程度的好坏(对应偏差)； Ω(θ) 是正则项，是衡量模型的复杂程度（对应方差）； 目标函数定义为损失函数和正则项两部分，是为了平衡模型的偏差和方差（Bias Variance Trade-off）。 偏差与学习器 偏差描述了 学习器的拟合能力 （对训练集的）。 学习器在训练集表现越好，损失越低，则模型的偏差越小。 方差与学习器 方差描述了 学习器的泛化能力(对测试集)。 学习器在测试集表现越好，则模型的方差越低。 偏差与方差之间的关系 我们最想要的是低偏差，低方差的模型，然而现实很难达到两者都极致的低。有时候需要用提高偏差来降低方差，毕竟模型的泛化能力十分重要。 当损失函数达到极小值，模型对训练集的拟合达到了最佳效果，==对应着低偏差==，而这种情况下，往往对训练集的特点学的过于细微，而缺乏泛化能力。 根据 ==奥坎姆剃刀原则==, 同样准确率，模型越简单越好，所以通过正则化等方式，削弱模型的拟合能力，降低过拟合的风险。通过提高偏差，来主动降低方差。 最终我们要平衡方差与偏差，从而得到一个合理的模型。 调整方差与偏差的方法待补充。。。]]></content>

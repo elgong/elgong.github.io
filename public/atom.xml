@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.elgong.top/"/>
-  <updated>2019-08-02T02:26:52.381Z</updated>
+  <updated>2019-08-06T00:42:59.727Z</updated>
   <id>http://www.elgong.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pandas-时间&amp;日期处理</title>
+    <link href="http://www.elgong.top/2019/08/06/pandas-%E6%97%B6%E9%97%B4-%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/"/>
+    <id>http://www.elgong.top/2019/08/06/pandas-时间-日期处理/</id>
+    <published>2019-08-06T00:42:00.000Z</published>
+    <updated>2019-08-06T00:42:59.727Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="pandas-5-时间-amp-日期处理"><a href="#pandas-5-时间-amp-日期处理" class="headerlink" title="pandas -5 时间&amp;日期处理"></a>pandas -5 时间&amp;日期处理</h1><h2 id="pandas-常出现的时间格式"><a href="#pandas-常出现的时间格式" class="headerlink" title="pandas 常出现的时间格式"></a>pandas 常出现的时间格式</h2><ul><li>字符串类型 <code>object</code></li></ul><blockquote><p>一般是字符串类型，pandas 储存string时 使用 narray， 每一个object 是一个指针</p></blockquote><ul><li>datetime 类型 <code>datetime64</code></li></ul><ul><li>timedelta 类型</li></ul><blockquote><p>表示时间差的数据类型</p></blockquote><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ol><li><code>object</code> 2 <code>datetime</code></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 方法1</span><br><span class="line">df[1] = pd.to_datetime(df[1], format=&apos;%d.%m.%Y&apos;)</span><br><span class="line"></span><br><span class="line"># 指定format，速度会加快很多。</span><br><span class="line"></span><br><span class="line">// 方法2</span><br><span class="line">dateStr = &quot;2019-02-03&quot;</span><br><span class="line"></span><br><span class="line">myDate = datetime.strptime(dateStr, &quot;&quot;%Y-%m-%d&quot;&quot;)</span><br></pre></td></tr></table></figure><ol><li><code>datetime</code> 2 <code>object</code></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df[&quot;time_list&quot;] = df[&quot;time_list&quot;].strftime(&quot;%Y-%m-%d&quot;)</span><br><span class="line"></span><br><span class="line">// Y 2019</span><br><span class="line">// y  19</span><br></pre></td></tr></table></figure><h2 id="datetime-相关操作"><a href="#datetime-相关操作" class="headerlink" title="datetime 相关操作"></a>datetime 相关操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 查看列元素的年，月，日，星期（整数型）</span><br><span class="line">df[&quot;time&quot;].dt.year</span><br><span class="line">df[&quot;time&quot;].dt.month</span><br><span class="line">df[&quot;time&quot;].dt.day</span><br><span class="line">df[&quot;time&quot;].dt.weekday  # 星期一是0</span><br><span class="line"></span><br><span class="line">// 一年中的第几天,第几周</span><br><span class="line">df[&quot;time&quot;].dt.dayofyear</span><br><span class="line">df[&quot;time&quot;].dt.weekofyear</span><br><span class="line">// 查看列元素 某年的数据数量</span><br><span class="line">df[df[&quot;time&quot;].dt.year == 2019].shape</span><br></pre></td></tr></table></figure><h2 id="时间运算"><a href="#时间运算" class="headerlink" title="时间运算"></a>时间运算</h2><ol><li>计算时间差</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 计算时间差， 结果为timedelta</span><br><span class="line">df[&quot;时间差&quot;] = df[&quot;时间1&quot;] - df[&quot;时间2&quot;]</span><br><span class="line"></span><br><span class="line">// 转换成 天数差</span><br><span class="line">df[&quot;时间差&quot;].days</span><br></pre></td></tr></table></figure><ol><li>计算未来日期</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// N天后的日期</span><br><span class="line">// 天  days,   时 hours， 周 weeks</span><br><span class="line">df[&quot;时间&quot;] = df[&quot;时间1&quot;] - timedelta(days=10)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;pandas-5-时间-amp-日期处理&quot;&gt;&lt;a href=&quot;#pandas-5-时间-amp-日期处理&quot; class=&quot;headerlink&quot; title=&quot;pandas -5 时间&amp;amp;日期处理&quot;&gt;&lt;/a&gt;pandas -5 时间&amp;amp;日期处理&lt;/h1
+      
+    
+    </summary>
+    
+      <category term="pandas系列教程" scheme="http://www.elgong.top/categories/pandas%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="pandas" scheme="http://www.elgong.top/tags/pandas/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习模型的偏差与方差</title>
