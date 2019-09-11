@@ -463,10 +463,10 @@ needmoreshare2:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-#google_site_verification:
+# google_site_verification: <meta name="google-site-verification" content="Jfi6xNXozGnL1Z-fbnrgYDkeqE3sI2qj6iuLHQCzxo4">
 
 # Google Analytics
-#google_analytics:
+google_analytics: UA-145220662-1
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/

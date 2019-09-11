@@ -1,12 +1,12 @@
 ---
-title: pandas-数据结构
+title: pandas -1数据结构
 mathjax: true
 date: 2019-07-22 09:01:01
 categories: pandas系列教程
 tags: pandas
 ---
 
-# pandas 数据结构
+# pandas -1 数据结构
 > pandas 基本操作都很简单，只是在刚开始学习的过程中，容易忘掉一些API，导致完成一些操作时，总会想着翻翻手册，这一系列博客，是对这些方法进行了梳理，可作为入门学习的参考材料。平时经常翻阅。
 
 “index” (axis=0, default), “columns” (axis=1)
@@ -17,6 +17,7 @@ tags: pandas
 ### 创建seriex
 
 ```
+
 // Series 数组生成，指定数据类型
 In:   
     user_age = pd.Series(data=[18, 30, 25, 40], dtype=float)

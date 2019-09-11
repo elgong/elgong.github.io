@@ -77,4 +77,52 @@ AUC(Area under Curve) 被定义为ROC曲线的下侧面积。一般在(0.5~1)之
 
 [链接](http://zhuzhuyule.xyz)
 
-![logo](图片测试！/test.jpg)
+```
+	import numpy as np
+	from sklearn.metrics import roc_curve
+	from sklearn.metrics import auc
+	from time import time
+	
+	# y:     标签
+	# pred： 预测值
+	def myAUC(y, pred):
+	
+	    auc = 0.0
+	    p_list = []  # 正负例的索引
+	    n_list = []
+	    for i, y_ in enumerate(y):
+	        if y_ == 1:
+	            p_list.append(i)
+	        else:
+	            n_list.append(i)
+	    # 构成p-n对
+	    p_n = [(i,j) for i in p_list for j in n_list]
+	    
+	    pn_len = len(p_n)
+	    for tup in p_n:
+	        if pred[tup[0]] > pred[tup[1]]:
+	            auc += 1
+	        elif pred[tup[0]] == pred[tup[1]]:
+	            auc += 0.5
+	    auc = auc/pn_len
+	    return auc
+	
+	
+	## 产生一组数据
+	y = np.array([1,0,0,0,1,0,1,0,])
+	pred = np.array([0.9, 0.8, 0.3, 0.1,0.4,0.9,0.66,0.7])
+	
+	## sklearn 结果
+	fpr, tpr, thresholds = roc_curve(y, pred, pos_label=1)
+	
+	tim = time()
+	print("sklearn AUC:",auc(fpr, tpr))
+	print("sklearn AUC time:", time()-tim)
+	
+	
+	## myAUC 结果
+	tim = time()
+	print("\nmyAUC:",myAUC(y,pred))
+	print("myAUC time:", time()-tim)
+
+```

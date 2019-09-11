@@ -109,12 +109,10 @@
 <meta property="og:site_name" content="elgong&#39;s Home.">
 <meta property="og:description" content="非均衡分类问题 非均衡分类问题指的是每个类别的错误代价不同。 比如疾病检测中,有病患者诊断健康的代价，要比健康人诊断成有病（可能性）造成的影响更为严重。 对于常用的预测模型，通常是有预测的概率值，我们找到一个合适的截断点作为正负类别的界限。显然再不同的任务下，截断点选择是不同的。我们使用Precison 和Recall的新度量指标来针对特定任务下选择合适的截断值。      真实标签 预测为正 预">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://www.elgong.top/2019/07/20/评价指标-ROC与AUC/test.jpg">
-<meta property="og:updated_time" content="2019-07-30T15:35:42.744Z">
+<meta property="og:updated_time" content="2019-08-09T02:09:17.555Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="评价指标 ROC与AUC">
 <meta name="twitter:description" content="非均衡分类问题 非均衡分类问题指的是每个类别的错误代价不同。 比如疾病检测中,有病患者诊断健康的代价，要比健康人诊断成有病（可能性）造成的影响更为严重。 对于常用的预测模型，通常是有预测的概率值，我们找到一个合适的截断点作为正负类别的界限。显然再不同的任务下，截断点选择是不同的。我们使用Precison 和Recall的新度量指标来针对特定任务下选择合适的截断值。      真实标签 预测为正 预">
-<meta name="twitter:image" content="http://www.elgong.top/2019/07/20/评价指标-ROC与AUC/test.jpg">
 
 
 
@@ -155,6 +153,15 @@
 
 
 
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-145220662-1', 'auto');
+  ga('send', 'pageview');
+</script>
 
 
 
@@ -403,7 +410,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  429 字
+                  614 字
                 </span>
               
 
@@ -419,7 +426,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -512,8 +519,7 @@
 </li>
 </ol>
 <h3 id="python-实现"><a href="#python-实现" class="headerlink" title="python 实现"></a>python 实现</h3><p><a href="http://zhuzhuyule.xyz" target="_blank" rel="noopener">链接</a></p>
-<p><img src="/2019/07/20/评价指标-ROC与AUC/test.jpg" alt="logo"></p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">from sklearn.metrics import roc_curve</span><br><span class="line">from sklearn.metrics import auc</span><br><span class="line">from time import time</span><br><span class="line"></span><br><span class="line"># y:     标签</span><br><span class="line"># pred： 预测值</span><br><span class="line">def myAUC(y, pred):</span><br><span class="line"></span><br><span class="line">    auc = 0.0</span><br><span class="line">    p_list = []  # 正负例的索引</span><br><span class="line">    n_list = []</span><br><span class="line">    for i, y_ in enumerate(y):</span><br><span class="line">        if y_ == 1:</span><br><span class="line">            p_list.append(i)</span><br><span class="line">        else:</span><br><span class="line">            n_list.append(i)</span><br><span class="line">    # 构成p-n对</span><br><span class="line">    p_n = [(i,j) for i in p_list for j in n_list]</span><br><span class="line">    </span><br><span class="line">    pn_len = len(p_n)</span><br><span class="line">    for tup in p_n:</span><br><span class="line">        if pred[tup[0]] &gt; pred[tup[1]]:</span><br><span class="line">            auc += 1</span><br><span class="line">        elif pred[tup[0]] == pred[tup[1]]:</span><br><span class="line">            auc += 0.5</span><br><span class="line">    auc = auc/pn_len</span><br><span class="line">    return auc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 产生一组数据</span><br><span class="line">y = np.array([1,0,0,0,1,0,1,0,])</span><br><span class="line">pred = np.array([0.9, 0.8, 0.3, 0.1,0.4,0.9,0.66,0.7])</span><br><span class="line"></span><br><span class="line">## sklearn 结果</span><br><span class="line">fpr, tpr, thresholds = roc_curve(y, pred, pos_label=1)</span><br><span class="line"></span><br><span class="line">tim = time()</span><br><span class="line">print(&quot;sklearn AUC:&quot;,auc(fpr, tpr))</span><br><span class="line">print(&quot;sklearn AUC time:&quot;, time()-tim)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## myAUC 结果</span><br><span class="line">tim = time()</span><br><span class="line">print(&quot;\nmyAUC:&quot;,myAUC(y,pred))</span><br><span class="line">print(&quot;myAUC time:&quot;, time()-tim)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -574,8 +580,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/22/pandas-数据结构/" rel="prev" title="pandas-数据结构">
-                pandas-数据结构 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/22/pandas-1数据结构/" rel="prev" title="pandas -1数据结构">
+                pandas -1数据结构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -658,7 +664,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -680,7 +686,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -771,7 +777,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.7k</span>
+    <span title="Site words total count">20.1k</span>
   
 </div>
 
@@ -797,7 +803,7 @@
 <!--
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.7k字</span>
+  <span class="post-count">博客全站共20.1k字</span>
 </div>
 -->
 

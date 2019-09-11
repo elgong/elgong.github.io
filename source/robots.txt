@@ -1,0 +1,11 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+Allow: /about/
+Allow: /categories/
+Allow: /tags/
+
+
+
+Sitemap: http://elgong.top/sitemap.xml
+Sitemap: http://elgong.top/baidusitemap.xml

@@ -101,18 +101,18 @@
 
 
 
-<meta name="description" content="pandas 数据结构 pandas 基本操作都很简单，只是在刚开始学习的过程中，容易忘掉一些API，导致完成一些操作时，总会想着翻翻手册，这一系列博客，是对这些方法进行了梳理，可作为入门学习的参考材料。平时经常翻阅。  “index” (axis=0, default), “columns” (axis=1) 1. Series Series 是一个带有 名称 和索引的一维数组。  创建seri">
+<meta name="description" content="pandas -2 索引和选择数据 对于一种数据结构,最基本的操作就应该是增删改查了。  1. 行列选择行选择和列选择有许多方法，很容易记混，常用的要记住。主要方法有三种： iloc, loc, [] 行选择 切片  12345// 切片df[a:b]// 隔1行选择df[::2]  指定位置 df.iloc[1, 1] df.iloc[1:10, 2:3] df.iloc[1:10][&amp;#39;">
 <meta name="keywords" content="pandas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pandas-数据结构">
-<meta property="og:url" content="http://www.elgong.top/2019/07/22/pandas-数据结构/index.html">
+<meta property="og:title" content="pandas-2索引和选择数据">
+<meta property="og:url" content="http://www.elgong.top/2019/07/25/pandas-2索引和选择数据/index.html">
 <meta property="og:site_name" content="elgong&#39;s Home.">
-<meta property="og:description" content="pandas 数据结构 pandas 基本操作都很简单，只是在刚开始学习的过程中，容易忘掉一些API，导致完成一些操作时，总会想着翻翻手册，这一系列博客，是对这些方法进行了梳理，可作为入门学习的参考材料。平时经常翻阅。  “index” (axis=0, default), “columns” (axis=1) 1. Series Series 是一个带有 名称 和索引的一维数组。  创建seri">
+<meta property="og:description" content="pandas -2 索引和选择数据 对于一种数据结构,最基本的操作就应该是增删改查了。  1. 行列选择行选择和列选择有许多方法，很容易记混，常用的要记住。主要方法有三种： iloc, loc, [] 行选择 切片  12345// 切片df[a:b]// 隔1行选择df[::2]  指定位置 df.iloc[1, 1] df.iloc[1:10, 2:3] df.iloc[1:10][&amp;#39;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-30T15:35:42.728Z">
+<meta property="og:updated_time" content="2019-09-11T06:18:41.751Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pandas-数据结构">
-<meta name="twitter:description" content="pandas 数据结构 pandas 基本操作都很简单，只是在刚开始学习的过程中，容易忘掉一些API，导致完成一些操作时，总会想着翻翻手册，这一系列博客，是对这些方法进行了梳理，可作为入门学习的参考材料。平时经常翻阅。  “index” (axis=0, default), “columns” (axis=1) 1. Series Series 是一个带有 名称 和索引的一维数组。  创建seri">
+<meta name="twitter:title" content="pandas-2索引和选择数据">
+<meta name="twitter:description" content="pandas -2 索引和选择数据 对于一种数据结构,最基本的操作就应该是增删改查了。  1. 行列选择行选择和列选择有许多方法，很容易记混，常用的要记住。主要方法有三种： iloc, loc, [] 行选择 切片  12345// 切片df[a:b]// 隔1行选择df[::2]  指定位置 df.iloc[1, 1] df.iloc[1:10, 2:3] df.iloc[1:10][&amp;#39;">
 
 
 
@@ -142,17 +142,26 @@
 
 
 
-  <link rel="canonical" href="http://www.elgong.top/2019/07/22/pandas-数据结构/">
+  <link rel="canonical" href="http://www.elgong.top/2019/07/25/pandas-2索引和选择数据/">
 
 
 
 
 
-  <title>pandas-数据结构 | elgong's Home.</title>
+  <title>pandas-2索引和选择数据 | elgong's Home.</title>
   
 
 
 
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-145220662-1', 'auto');
+  ga('send', 'pageview');
+</script>
 
 
 
@@ -307,7 +316,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.elgong.top/2019/07/22/pandas-数据结构/">
+    <link itemprop="mainEntityOfPage" href="http://www.elgong.top/2019/07/25/pandas-2索引和选择数据/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="elgong">
@@ -324,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">pandas-数据结构</h1>
+          <h1 class="post-title" itemprop="name headline">pandas-2索引和选择数据</h1>
         
 
         <div class="post-meta">
@@ -337,8 +346,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-22T09:01:01+08:00">
-                2019-07-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-25T07:01:01+08:00">
+                2019-07-25
               </time>
             
 
@@ -378,8 +387,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/22/pandas-数据结构/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/22/pandas-数据结构/" itemprop="commentCount"></span>
+                <a href="/2019/07/25/pandas-2索引和选择数据/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/25/pandas-2索引和选择数据/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -401,7 +410,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  415 字
+                  576 字
                 </span>
               
 
@@ -438,23 +447,85 @@
       
 
       
-        <h1 id="pandas-数据结构"><a href="#pandas-数据结构" class="headerlink" title="pandas 数据结构"></a>pandas 数据结构</h1><blockquote>
-<p>pandas 基本操作都很简单，只是在刚开始学习的过程中，容易忘掉一些API，导致完成一些操作时，总会想着翻翻手册，这一系列博客，是对这些方法进行了梳理，可作为入门学习的参考材料。平时经常翻阅。</p>
+        <h1 id="pandas-2-索引和选择数据"><a href="#pandas-2-索引和选择数据" class="headerlink" title="pandas -2 索引和选择数据"></a>pandas -2 索引和选择数据</h1><blockquote>
+<p>对于一种数据结构,最基本的操作就应该是增删改查了。</p>
 </blockquote>
-<p>“index” (axis=0, default), “columns” (axis=1)</p>
-<h2 id="1-Series"><a href="#1-Series" class="headerlink" title="1. Series"></a>1. Series</h2><blockquote>
-<p>Series 是一个带有 名称 和索引的一维数组。</p>
+<h2 id="1-行列选择"><a href="#1-行列选择" class="headerlink" title="1. 行列选择"></a>1. 行列选择</h2><p>行选择和列选择有许多方法，很容易记混，常用的要记住。<br>主要方法有三种： <code>iloc</code>, <code>loc</code>, <code>[]</code></p>
+<h3 id="行选择"><a href="#行选择" class="headerlink" title="行选择"></a>行选择</h3><ul>
+<li><p>切片 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 切片</span><br><span class="line">df[a:b]</span><br><span class="line"></span><br><span class="line">// 隔1行选择</span><br><span class="line">df[::2]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指定位置</p>
+<p><code>df.iloc[1, 1]</code></p>
+<p><code>df.iloc[1:10, 2:3]</code></p>
+<p><code>df.iloc[1:10][&#39;Price&#39;]</code></p>
+</li>
+<li><p>指定索引</p>
+<p><code>df.loc[&quot;index1&quot;, &quot;index2&quot;]</code></p>
+</li>
+<li><p>按照条件查找</p>
+<p><code>df[( df[&quot;row2&quot;] == 1) &amp; (df[&quot;row2&quot;] == &quot;null&quot;)]</code></p>
+<p><code>df.loc[( df[&quot;row2&quot;] == 1) &amp; (df[&quot;row2&quot;] == &quot;null&quot;)]</code></p>
+</li>
+</ul>
+<h3 id="列选择"><a href="#列选择" class="headerlink" title="列选择"></a>列选择</h3><ul>
+<li><p>通过列标签选择单列</p>
+<p>  <code>df[&quot;price&quot;]</code></p>
+</li>
+<li><p>通过列标签选择多列</p>
+<p> <code>df[[&quot;price&quot;, &quot;time&quot;]]</code></p>
+</li>
+<li><p>通过列索引,选择前3列</p>
+<p><code>df.iloc[:, :3]</code> </p>
+</li>
+</ul>
+<h3 id="行列选择"><a href="#行列选择" class="headerlink" title="行列选择"></a>行列选择</h3><p>  <code>df.loc[:,  [&quot;price&quot;]]</code></p>
+<p>  <code>df.iloc[a:b][&#39;Price&#39;]</code></p>
+<h3 id="随机采样行或者列"><a href="#随机采样行或者列" class="headerlink" title="随机采样行或者列"></a>随机采样行或者列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s.sample(frac=0.5)</span><br><span class="line">// 参数</span><br><span class="line">// 默认选择行，n = 行数，  frac = 比例</span><br><span class="line">// replace: 默认False 无放回采样</span><br><span class="line">// weights: 样本采样权重</span><br><span class="line">// axis:  默认=0 行,  =1 列</span><br><span class="line">// random_state=2</span><br></pre></td></tr></table></figure>
+<h2 id="2-行的增删改查"><a href="#2-行的增删改查" class="headerlink" title="2. 行的增删改查"></a>2. 行的增删改查</h2><h3 id="增加"><a href="#增加" class="headerlink" title="增加"></a>增加</h3><blockquote>
+<p>单列</p>
 </blockquote>
-<h3 id="创建seriex"><a href="#创建seriex" class="headerlink" title="创建seriex"></a>创建seriex</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// Series 数组生成，指定数据类型</span><br><span class="line">In:   </span><br><span class="line">    user_age = pd.Series(data=[18, 30, 25, 40], dtype=float)</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">        0    18</span><br><span class="line">        1    30</span><br><span class="line">        2    25</span><br><span class="line">        3    40</span><br><span class="line">        dtype: int64</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 增加索引 index</span><br><span class="line">In:   </span><br><span class="line">    user_age.index = [&quot;Tom&quot;, &quot;Bob&quot;, &quot;Mary&quot;, &quot;James&quot;]</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">    Tom      18</span><br><span class="line">    Bob      30</span><br><span class="line">    Mary     25</span><br><span class="line">    James    40</span><br><span class="line">    dtype: int64</span><br><span class="line">    </span><br><span class="line">// 表头</span><br><span class="line">In:</span><br><span class="line">    user_age.index.name(&quot;name&quot;)</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">    name</span><br><span class="line">    Tom      18</span><br><span class="line">    Bob      30</span><br><span class="line">    Mary     25</span><br><span class="line">    James    40</span><br><span class="line">    dtype: int64</span><br></pre></td></tr></table></figure>
-<h3 id="像字典一样使用series"><a href="#像字典一样使用series" class="headerlink" title="像字典一样使用series"></a>像字典一样使用series</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// index 当键值</span><br><span class="line">In: </span><br><span class="line">    user_age[&quot;Tom&quot;]</span><br><span class="line">    user_age.get(&quot;Tom&quot;)</span><br><span class="line"></span><br><span class="line">// 切片-列</span><br><span class="line">In:</span><br><span class="line">    user_age[2:3]</span><br><span class="line">    </span><br><span class="line">// 按条件查找</span><br><span class="line">In:</span><br><span class="line">    user_age[user_age &gt; 30]</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">    name</span><br><span class="line">    James    40.0</span><br><span class="line">    Name: user_age_info, dtype: float64</span><br></pre></td></tr></table></figure>
-<h3 id="像向量一样使用series"><a href="#像向量一样使用series" class="headerlink" title="像向量一样使用series"></a>像向量一样使用series</h3><blockquote>
-<p>可以传递给np方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 末尾增加</span><br><span class="line">   df[&quot;new col&quot;] = None</span><br><span class="line">   </span><br><span class="line">// 指定位置增加，在2列后</span><br><span class="line">   df.insert(2,&apos;city&apos;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>多列</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 整列加减</span><br><span class="line">In:</span><br><span class="line">    user_age + 1</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">    name</span><br><span class="line">    Tom      19.0</span><br><span class="line">    Bob      31.0</span><br><span class="line">    Mary     26.0</span><br><span class="line">    James    41.0</span><br><span class="line">    Name: user_age_info, dtype: float64</span><br></pre></td></tr></table></figure>
-<h2 id="2-DataFrame"><a href="#2-DataFrame" class="headerlink" title="2. DataFrame"></a>2. DataFrame</h2><blockquote>
-<p>DataFrame 是一个带有 名称 和索引的二维数组，像一张Excel表格。</p>
+<p>   <code>pd.concat([df, pd.DataFrame(columns=[&quot;C&quot;,&quot;D&quot;])])</code></p>
+<blockquote>
+<p>单行（待验证）</p>
 </blockquote>
-<h3 id="创建DataFrame"><a href="#创建DataFrame" class="headerlink" title="创建DataFrame"></a>创建DataFrame</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// DataFrame 根据字典生成</span><br><span class="line"></span><br><span class="line">In:</span><br><span class="line">    index = pd.Index(data=[&quot;Tom&quot;, &quot;Bob&quot;, &quot;Mary&quot;, &quot;James&quot;], name=&quot;name&quot;)</span><br><span class="line">    </span><br><span class="line">    data = &#123;</span><br><span class="line">        &quot;age&quot;: [18, 30, 40],</span><br><span class="line">        &quot;city&quot;: [&quot;BeiJing&quot;, &quot;ShangHai&quot;, &quot;HangZhou&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    user_info = pd.DataFrame(data=data, index=index)</span><br><span class="line">    user_info</span><br><span class="line"></span><br><span class="line">Out:</span><br><span class="line">    </span><br><span class="line">// DataFrame 根据二维列表生成</span><br><span class="line">In:</span><br><span class="line">    data = [[18, &quot;BeiJing&quot;], </span><br><span class="line">            [30, &quot;ShangHai&quot;], </span><br><span class="line">            [25, &quot;GuangZhou&quot;], </span><br><span class="line">            [40, &quot;ShenZhen&quot;]]</span><br><span class="line">    columns = [&quot;age&quot;, &quot;city&quot;]</span><br><span class="line">    </span><br><span class="line">    user_info = pd.DataFrame(data=data, index=index, columns=columns)</span><br><span class="line">    user_info</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// loc 添加</span><br><span class="line">  df.loc[‘5‘] = [3, 3, 3, 3]</span><br><span class="line">    </span><br><span class="line">// set_value 添加</span><br><span class="line">  df.set_value(‘5‘, df.columns, [3,3,3,3], takeable=False)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>多行</p>
+</blockquote>
+<p>多行相当于合并两张表了,可以参考(merge,concat)<a href="https://note.youdao.com/" target="_blank" rel="noopener">方法</a>。</p>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><blockquote>
+<p>列</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// del 方法</span><br><span class="line">   def df[&quot;col_name&quot;]</span><br><span class="line"></span><br><span class="line">//根据列名 drop 方法</span><br><span class="line">   df.drop([&quot;b&quot;, &quot;c&quot;], axis=1,inplace = True)</span><br><span class="line">axis = 1 列</span><br><span class="line">axis = 0 行</span><br><span class="line"></span><br><span class="line">// 根据列号 drop 方法</span><br><span class="line">   df.drop(df.columns[[1,2]], axis=1, inplace=True)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>行</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 根据索引 删除行</span><br><span class="line">   df = df.drop([1, 2])</span><br><span class="line"></span><br><span class="line">// 根据value 删除行</span><br><span class="line">   df = df[~df[&quot;col&quot;].isin(5,9)</span><br></pre></td></tr></table></figure>
+<h3 id="修改与查找"><a href="#修改与查找" class="headerlink" title="修改与查找"></a>修改与查找</h3><blockquote>
+<p>单值修改和查找时, 参考选择行列方法。</p>
+<p>多值查找时，</p>
+</blockquote>
+<h4 id="按条件查找"><a href="#按条件查找" class="headerlink" title="按条件查找"></a>按条件查找</h4><p> <code>df_train[( df_train[&quot;row&quot;] == 1) &amp;( == &quot;null&quot;)]</code></p>
+<h4 id="query-查找"><a href="#query-查找" class="headerlink" title="query 查找"></a>query 查找</h4><p> <code>df.query(&#39;(a &lt; b) &amp; (b &lt; c)&#39;)</code></p>
+<h4 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h4><blockquote>
+<p>单个替换，inplace = True 覆盖源文件</p>
+</blockquote>
+<p>  <code>df.replace(to_replace, value, inplace = True)</code></p>
+<blockquote>
+<p>多值替换—-字典</p>
+</blockquote>
+<p>  <code>df.replace({&quot;A&quot;:&quot;B&quot;,  29:100})</code></p>
+<blockquote>
+<p>按条件替换</p>
+</blockquote>
+<p>  <code>df.where(df &gt; 0, -df, inplace=True)</code></p>
+<h4 id="交换两列的位置"><a href="#交换两列的位置" class="headerlink" title="交换两列的位置"></a>交换两列的位置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[[&apos;B&apos;, &apos;A&apos;]] = df[[&apos;A&apos;, &apos;B&apos;]]</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -505,8 +576,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/20/评价指标-ROC与AUC/" rel="next" title="评价指标 ROC与AUC">
-                <i class="fa fa-chevron-left"></i> 评价指标 ROC与AUC
+              <a href="/2019/07/22/pandas-1数据结构/" rel="next" title="pandas -1数据结构">
+                <i class="fa fa-chevron-left"></i> pandas -1数据结构
               </a>
             
           </div>
@@ -515,8 +586,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/25/pandas-行列操作/" rel="prev" title="pandas-行列操作">
-                pandas-行列操作 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/30/XGBoost/" rel="prev" title="XGBoost">
+                XGBoost <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -599,7 +670,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -621,7 +692,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -677,7 +748,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas-数据结构"><span class="nav-number">1.</span> <span class="nav-text">pandas 数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Series"><span class="nav-number">1.1.</span> <span class="nav-text">1. Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建seriex"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建seriex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#像字典一样使用series"><span class="nav-number">1.1.2.</span> <span class="nav-text">像字典一样使用series</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#像向量一样使用series"><span class="nav-number">1.1.3.</span> <span class="nav-text">像向量一样使用series</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-DataFrame"><span class="nav-number">1.2.</span> <span class="nav-text">2. DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建DataFrame"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建DataFrame</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas-2-索引和选择数据"><span class="nav-number">1.</span> <span class="nav-text">pandas -2 索引和选择数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-行列选择"><span class="nav-number">1.1.</span> <span class="nav-text">1. 行列选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行选择"><span class="nav-number">1.1.1.</span> <span class="nav-text">行选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列选择"><span class="nav-number">1.1.2.</span> <span class="nav-text">列选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行列选择"><span class="nav-number">1.1.3.</span> <span class="nav-text">行列选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机采样行或者列"><span class="nav-number">1.1.4.</span> <span class="nav-text">随机采样行或者列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-行的增删改查"><span class="nav-number">1.2.</span> <span class="nav-text">2. 行的增删改查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增加"><span class="nav-number">1.2.1.</span> <span class="nav-text">增加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">1.2.2.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改与查找"><span class="nav-number">1.2.3.</span> <span class="nav-text">修改与查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#按条件查找"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">按条件查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#query-查找"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">query 查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换两列的位置"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">交换两列的位置</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -712,7 +783,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">18.7k</span>
+    <span title="Site words total count">20.1k</span>
   
 </div>
 
@@ -738,7 +809,7 @@
 <!--
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.7k字</span>
+  <span class="post-count">博客全站共20.1k字</span>
 </div>
 -->
 
