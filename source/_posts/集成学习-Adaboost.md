@@ -1,5 +1,5 @@
 ---
-title: 集成学习-Adaboost
+title: 集成学习提升算法-Adaboost
 date: 2019-06-25 18:57:01
 tags: 集成学习
 categories: 机器学习方法
@@ -85,5 +85,10 @@ $$Z_{m}=\sum_{i=1}^{N} w_{m i} \exp \left(-\alpha_{m} y_{i} G_{m}\left(x_{i}\rig
 $$f(x)=\sum_{m=1}^{M} \alpha_{m} h_{m}(x)$$
 
 $$H(x)=\operatorname{sign}(f(x))=\operatorname{sign}\left(\sum_{m=1}^{M} \alpha_{m} h_{m}(x)\right)$$
+
+
+## 三、Adaboost算法解释
+
+> 模型为加法模型(基函数的线性组合),损失函数为指数函数,学习算法是前想分布算法的二类分类学习法.
 
 

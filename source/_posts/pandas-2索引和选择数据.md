@@ -8,6 +8,7 @@ tags: pandas
 ---
 # pandas -2 索引和选择数据
 
+
 > 对于一种数据结构,最基本的操作就应该是增删改查了。
 
 ## 1. 行列选择
@@ -41,6 +42,12 @@ tags: pandas
   ` df[( df["row2"] == 1) & (df["row2"] == "null")]`
   
   ` df.loc[( df["row2"] == 1) & (df["row2"] == "null")]`
+  
+- 根据列的多个值,选择行
+  
+  `List = [1,2,3,4,5]`
+  ` train[train["customer_id"].isin(List)]`
+
 
   
 ### 列选择
@@ -59,8 +66,7 @@ tags: pandas
 
 ### 行列选择
 
-  `df.loc[:,  ["price"]]`
-
+  `df.loc["index1" : "index2",  ["price"]]`
   
   `df.iloc[a:b]['Price']`
   
@@ -74,8 +80,27 @@ tags: pandas
     // weights: 样本采样权重
     // axis:  默认=0 行,  =1 列
     // random_state=2
+
+```
+
+### 分类别等数量抽样
+
+```
+# 降采样 -- 分类抽样
+def subSample(df_x, splitAttribute = "Attribute4"):
     
-    
+    subsampleNum = min(df_x.groupby(splitAttribute).size())
+    print(subsampleNum)
+    df_x_sub = df_x.iloc[1:2,:]
+    #df_y_sub = df_y.iloc[1:2,:]
+    for label in df_x[splitAttribute].unique():
+        tmp_x = df_x[df_x[splitAttribute] == label]
+
+        random_list = random.sample(range(0,len(tmp_x)),subsampleNum )
+        df_x_sub = df_x_sub.append(tmp_x.iloc[random_list,:])
+        df_y_sub.append(tmp_y.iloc[random_list,:])
+    return df_x_sub #, df_y_sub
+
 ```
   
   
@@ -110,6 +135,8 @@ tags: pandas
 
 多行相当于合并两张表了,可以参考(merge,concat)[方法](https://note.youdao.com/)。
 
+`test_ = pd.merge(tmp, data.loc[:,["customer_id", "label"]],on=['customer_id'],how='left',copy=False")`
+
 
 ### 删除
 
@@ -137,6 +164,12 @@ axis = 0 行
 // 根据value 删除行
    df = df[~df["col"].isin(5,9)
     
+```
+
+> 按照条件删除行
+
+```
+df.drop(df[df["order_pay_time"] < pd.to_datetime("2013-11-12 23:59:44") ].index)
 ```
 
 ### 修改与查找
@@ -173,6 +206,9 @@ axis = 0 行
     df[['B', 'A']] = df[['A', 'B']]
 
 ```
+
+
+
 
 
 

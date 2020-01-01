@@ -104,14 +104,14 @@
 <meta name="description" content="Adaboost 算法原理及推导 Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达到强学习器的效果。 Adaboost 是通过提升错分数据的权重值来改善模型的不足。其主要的流程是：  先训练一个基学习器； 根据基学习器的表现，改变样本的分布，使得错误分类的样本得到更多的关注； 改变分布后的样本再训练新的基学习器，如此迭代； 加权组合这些基学习器。   一、Ad">
 <meta name="keywords" content="集成学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="集成学习-Adaboost">
+<meta property="og:title" content="集成学习提升算法-Adaboost">
 <meta property="og:url" content="http://www.elgong.top/2019/06/25/集成学习-Adaboost/index.html">
 <meta property="og:site_name" content="elgong&#39;s Home.">
 <meta property="og:description" content="Adaboost 算法原理及推导 Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达到强学习器的效果。 Adaboost 是通过提升错分数据的权重值来改善模型的不足。其主要的流程是：  先训练一个基学习器； 根据基学习器的表现，改变样本的分布，使得错误分类的样本得到更多的关注； 改变分布后的样本再训练新的基学习器，如此迭代； 加权组合这些基学习器。   一、Ad">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-30T15:35:42.744Z">
+<meta property="og:updated_time" content="2019-09-13T04:51:41.807Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="集成学习-Adaboost">
+<meta name="twitter:title" content="集成学习提升算法-Adaboost">
 <meta name="twitter:description" content="Adaboost 算法原理及推导 Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达到强学习器的效果。 Adaboost 是通过提升错分数据的权重值来改善模型的不足。其主要的流程是：  先训练一个基学习器； 根据基学习器的表现，改变样本的分布，使得错误分类的样本得到更多的关注； 改变分布后的样本再训练新的基学习器，如此迭代； 加权组合这些基学习器。   一、Ad">
 
 
@@ -148,7 +148,7 @@
 
 
 
-  <title>集成学习-Adaboost | elgong's Home.</title>
+  <title>集成学习提升算法-Adaboost | elgong's Home.</title>
   
 
 
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">集成学习-Adaboost</h1>
+          <h1 class="post-title" itemprop="name headline">集成学习提升算法-Adaboost</h1>
         
 
         <div class="post-meta">
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  644 字
+                  693 字
                 </span>
               
 
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -492,7 +492,10 @@ w_{1 i}=\frac{1}{N}, i=1,2, \cdots, N</script><p>步骤2：训练基学习器，
 <li>迭代训练学习器</li>
 </ul>
 <p>步骤3：加权组合弱学习器。</p>
-<script type="math/tex; mode=display">f(x)=\sum_{m=1}^{M} \alpha_{m} h_{m}(x)</script><script type="math/tex; mode=display">H(x)=\operatorname{sign}(f(x))=\operatorname{sign}\left(\sum_{m=1}^{M} \alpha_{m} h_{m}(x)\right)</script>
+<script type="math/tex; mode=display">f(x)=\sum_{m=1}^{M} \alpha_{m} h_{m}(x)</script><script type="math/tex; mode=display">H(x)=\operatorname{sign}(f(x))=\operatorname{sign}\left(\sum_{m=1}^{M} \alpha_{m} h_{m}(x)\right)</script><h2 id="三、Adaboost算法解释"><a href="#三、Adaboost算法解释" class="headerlink" title="三、Adaboost算法解释"></a>三、Adaboost算法解释</h2><blockquote>
+<p>模型为加法模型(基函数的线性组合),损失函数为指数函数,学习算法是前想分布算法的二类分类学习法.</p>
+</blockquote>
+
       
     </div>
     
@@ -637,7 +640,7 @@ w_{1 i}=\frac{1}{N}, i=1,2, \cdots, N</script><p>步骤2：训练基学习器，
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -648,7 +651,7 @@ w_{1 i}=\frac{1}{N}, i=1,2, \cdots, N</script><p>步骤2：训练基学习器，
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -659,7 +662,7 @@ w_{1 i}=\frac{1}{N}, i=1,2, \cdots, N</script><p>步骤2：训练基学习器，
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -715,7 +718,7 @@ w_{1 i}=\frac{1}{N}, i=1,2, \cdots, N</script><p>步骤2：训练基学习器，
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Adaboost-算法原理及推导"><span class="nav-number">1.</span> <span class="nav-text">Adaboost 算法原理及推导</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Adaboost算法原理"><span class="nav-number">1.1.</span> <span class="nav-text">一、Adaboost算法原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Adaboost算法推导"><span class="nav-number">1.2.</span> <span class="nav-text">二、Adaboost算法推导</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Adaboost-算法原理及推导"><span class="nav-number">1.</span> <span class="nav-text">Adaboost 算法原理及推导</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Adaboost算法原理"><span class="nav-number">1.1.</span> <span class="nav-text">一、Adaboost算法原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Adaboost算法推导"><span class="nav-number">1.2.</span> <span class="nav-text">二、Adaboost算法推导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Adaboost算法解释"><span class="nav-number">1.3.</span> <span class="nav-text">三、Adaboost算法解释</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -736,7 +739,7 @@ w_{1 i}=\frac{1}{N}, i=1,2, \cdots, N</script><p>步骤2：训练基学习器，
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+<div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-snowflake-o"></i>
   </span>
@@ -750,7 +753,7 @@ w_{1 i}=\frac{1}{N}, i=1,2, \cdots, N</script><p>步骤2：训练基学习器，
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.1k</span>
+    <span title="Site words total count">20.9k</span>
   
 </div>
 
@@ -776,7 +779,7 @@ w_{1 i}=\frac{1}{N}, i=1,2, \cdots, N</script><p>步骤2：训练基学习器，
 <!--
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.1k字</span>
+  <span class="post-count">博客全站共20.9k字</span>
 </div>
 -->
 

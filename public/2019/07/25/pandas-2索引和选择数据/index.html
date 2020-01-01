@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="elgong&#39;s Home.">
 <meta property="og:description" content="pandas -2 索引和选择数据 对于一种数据结构,最基本的操作就应该是增删改查了。  1. 行列选择行选择和列选择有许多方法，很容易记混，常用的要记住。主要方法有三种： iloc, loc, [] 行选择 切片  12345// 切片df[a:b]// 隔1行选择df[::2]  指定位置 df.iloc[1, 1] df.iloc[1:10, 2:3] df.iloc[1:10][&amp;#39;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-11T06:18:41.751Z">
+<meta property="og:updated_time" content="2019-09-16T07:59:02.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pandas-2索引和选择数据">
 <meta name="twitter:description" content="pandas -2 索引和选择数据 对于一种数据结构,最基本的操作就应该是增删改查了。  1. 行列选择行选择和列选择有许多方法，很容易记混，常用的要记住。主要方法有三种： iloc, loc, [] 行选择 切片  12345// 切片df[a:b]// 隔1行选择df[::2]  指定位置 df.iloc[1, 1] df.iloc[1:10, 2:3] df.iloc[1:10][&amp;#39;">
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  576 字
+                  728 字
                 </span>
               
 
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -467,6 +467,9 @@
 <p><code>df[( df[&quot;row2&quot;] == 1) &amp; (df[&quot;row2&quot;] == &quot;null&quot;)]</code></p>
 <p><code>df.loc[( df[&quot;row2&quot;] == 1) &amp; (df[&quot;row2&quot;] == &quot;null&quot;)]</code></p>
 </li>
+<li><p>根据列的多个值,选择行</p>
+<p><code>List = [1,2,3,4,5]</code><br><code>train[train[&quot;customer_id&quot;].isin(List)]</code></p>
+</li>
 </ul>
 <h3 id="列选择"><a href="#列选择" class="headerlink" title="列选择"></a>列选择</h3><ul>
 <li><p>通过列标签选择单列</p>
@@ -479,9 +482,10 @@
 <p><code>df.iloc[:, :3]</code> </p>
 </li>
 </ul>
-<h3 id="行列选择"><a href="#行列选择" class="headerlink" title="行列选择"></a>行列选择</h3><p>  <code>df.loc[:,  [&quot;price&quot;]]</code></p>
+<h3 id="行列选择"><a href="#行列选择" class="headerlink" title="行列选择"></a>行列选择</h3><p>  <code>df.loc[&quot;index1&quot; : &quot;index2&quot;,  [&quot;price&quot;]]</code></p>
 <p>  <code>df.iloc[a:b][&#39;Price&#39;]</code></p>
 <h3 id="随机采样行或者列"><a href="#随机采样行或者列" class="headerlink" title="随机采样行或者列"></a>随机采样行或者列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s.sample(frac=0.5)</span><br><span class="line">// 参数</span><br><span class="line">// 默认选择行，n = 行数，  frac = 比例</span><br><span class="line">// replace: 默认False 无放回采样</span><br><span class="line">// weights: 样本采样权重</span><br><span class="line">// axis:  默认=0 行,  =1 列</span><br><span class="line">// random_state=2</span><br></pre></td></tr></table></figure>
+<h3 id="分类别等数量抽样"><a href="#分类别等数量抽样" class="headerlink" title="分类别等数量抽样"></a>分类别等数量抽样</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 降采样 -- 分类抽样</span><br><span class="line">def subSample(df_x, splitAttribute = &quot;Attribute4&quot;):</span><br><span class="line">    </span><br><span class="line">    subsampleNum = min(df_x.groupby(splitAttribute).size())</span><br><span class="line">    print(subsampleNum)</span><br><span class="line">    df_x_sub = df_x.iloc[1:2,:]</span><br><span class="line">    #df_y_sub = df_y.iloc[1:2,:]</span><br><span class="line">    for label in df_x[splitAttribute].unique():</span><br><span class="line">        tmp_x = df_x[df_x[splitAttribute] == label]</span><br><span class="line"></span><br><span class="line">        random_list = random.sample(range(0,len(tmp_x)),subsampleNum )</span><br><span class="line">        df_x_sub = df_x_sub.append(tmp_x.iloc[random_list,:])</span><br><span class="line">        df_y_sub.append(tmp_y.iloc[random_list,:])</span><br><span class="line">    return df_x_sub #, df_y_sub</span><br></pre></td></tr></table></figure>
 <h2 id="2-行的增删改查"><a href="#2-行的增删改查" class="headerlink" title="2. 行的增删改查"></a>2. 行的增删改查</h2><h3 id="增加"><a href="#增加" class="headerlink" title="增加"></a>增加</h3><blockquote>
 <p>单列</p>
 </blockquote>
@@ -498,6 +502,7 @@
 <p>多行</p>
 </blockquote>
 <p>多行相当于合并两张表了,可以参考(merge,concat)<a href="https://note.youdao.com/" target="_blank" rel="noopener">方法</a>。</p>
+<p><code>test_ = pd.merge(tmp, data.loc[:,[&quot;customer_id&quot;, &quot;label&quot;]],on=[&#39;customer_id&#39;],how=&#39;left&#39;,copy=False&quot;)</code></p>
 <h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><blockquote>
 <p>列</p>
 </blockquote>
@@ -506,6 +511,10 @@
 <p>行</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 根据索引 删除行</span><br><span class="line">   df = df.drop([1, 2])</span><br><span class="line"></span><br><span class="line">// 根据value 删除行</span><br><span class="line">   df = df[~df[&quot;col&quot;].isin(5,9)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>按照条件删除行</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.drop(df[df[&quot;order_pay_time&quot;] &lt; pd.to_datetime(&quot;2013-11-12 23:59:44&quot;) ].index)</span><br></pre></td></tr></table></figure>
 <h3 id="修改与查找"><a href="#修改与查找" class="headerlink" title="修改与查找"></a>修改与查找</h3><blockquote>
 <p>单值修改和查找时, 参考选择行列方法。</p>
 <p>多值查找时，</p>
@@ -670,7 +679,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -681,7 +690,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -692,7 +701,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -748,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas-2-索引和选择数据"><span class="nav-number">1.</span> <span class="nav-text">pandas -2 索引和选择数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-行列选择"><span class="nav-number">1.1.</span> <span class="nav-text">1. 行列选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行选择"><span class="nav-number">1.1.1.</span> <span class="nav-text">行选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列选择"><span class="nav-number">1.1.2.</span> <span class="nav-text">列选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行列选择"><span class="nav-number">1.1.3.</span> <span class="nav-text">行列选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机采样行或者列"><span class="nav-number">1.1.4.</span> <span class="nav-text">随机采样行或者列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-行的增删改查"><span class="nav-number">1.2.</span> <span class="nav-text">2. 行的增删改查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增加"><span class="nav-number">1.2.1.</span> <span class="nav-text">增加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">1.2.2.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改与查找"><span class="nav-number">1.2.3.</span> <span class="nav-text">修改与查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#按条件查找"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">按条件查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#query-查找"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">query 查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换两列的位置"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">交换两列的位置</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas-2-索引和选择数据"><span class="nav-number">1.</span> <span class="nav-text">pandas -2 索引和选择数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-行列选择"><span class="nav-number">1.1.</span> <span class="nav-text">1. 行列选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行选择"><span class="nav-number">1.1.1.</span> <span class="nav-text">行选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列选择"><span class="nav-number">1.1.2.</span> <span class="nav-text">列选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行列选择"><span class="nav-number">1.1.3.</span> <span class="nav-text">行列选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机采样行或者列"><span class="nav-number">1.1.4.</span> <span class="nav-text">随机采样行或者列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类别等数量抽样"><span class="nav-number">1.1.5.</span> <span class="nav-text">分类别等数量抽样</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-行的增删改查"><span class="nav-number">1.2.</span> <span class="nav-text">2. 行的增删改查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增加"><span class="nav-number">1.2.1.</span> <span class="nav-text">增加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">1.2.2.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改与查找"><span class="nav-number">1.2.3.</span> <span class="nav-text">修改与查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#按条件查找"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">按条件查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#query-查找"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">query 查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换两列的位置"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">交换两列的位置</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -769,7 +778,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+<div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-snowflake-o"></i>
   </span>
@@ -783,7 +792,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.1k</span>
+    <span title="Site words total count">20.9k</span>
   
 </div>
 
@@ -809,7 +818,7 @@
 <!--
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.1k字</span>
+  <span class="post-count">博客全站共20.9k字</span>
 </div>
 -->
 
