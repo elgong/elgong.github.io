@@ -4,7 +4,6 @@ mathjax: true
 date: 2019-07-20 15:10:00
 categories: 机器学习方法
 tags: ROC
-top: True
 ---
 
 ## 非均衡分类问题

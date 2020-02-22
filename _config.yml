@@ -82,7 +82,7 @@ deploy:
   type: git
   repository: 
     github: https://github.com/elgong/elgong.github.io.git
-    coding: https://coding.net/u/elgong/p/coding/git
+    #coding: https://coding.net/u/elgong/p/coding/git
   branch: master
 
 sitemap:
