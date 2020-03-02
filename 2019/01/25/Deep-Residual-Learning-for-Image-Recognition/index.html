@@ -418,19 +418,7 @@
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  3 分钟
-                </span>
               
             </div>
           
@@ -705,7 +693,35 @@
           
 
           
+<!-- 文件位置：~/blog/themes/next/layout/_custom/sidebar.swig -->
 
+<div id="days"></div>
+<script>
+function show_date_time(){
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay=new Date("05/27/2017 15:13:14");
+    today=new Date();
+    timeold=(today.getTime()-BirthDay.getTime());
+    sectimeold=timeold/1000
+    secondsold=Math.floor(sectimeold);
+    msPerDay=24*60*60*1000
+    e_daysold=timeold/msPerDay
+    daysold=Math.floor(e_daysold);
+    e_hrsold=(e_daysold-daysold)*24;
+    hrsold=setzero(Math.floor(e_hrsold));
+    e_minsold=(e_hrsold-hrsold)*60;
+    minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+    seconds=setzero(Math.floor((e_minsold-minsold)*60));
+    document.getElementById('days').innerHTML="已运行 "+daysold+" 天 "+hrsold+" 小时 "+minsold+" 分 "+seconds+" 秒";
+}
+function setzero(i) {
+    if (i<10) {
+        i="0" + i
+    };
+    return i;
+}
+show_date_time();
+</script>
         </div>
       </section>
 
@@ -719,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通常情况下"><span class="nav-number">1.</span> <span class="nav-text">通常情况下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#退化问题是网络加深的障碍"><span class="nav-number">2.</span> <span class="nav-text">退化问题是网络加深的障碍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本文效果（很大程度上解决了退化问题）："><span class="nav-number">3.</span> <span class="nav-text">本文效果（很大程度上解决了退化问题）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本文怎么解决退化问题？"><span class="nav-number">4.</span> <span class="nav-text">本文怎么解决退化问题？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Resnet-结构分析"><span class="nav-number">4.1.</span> <span class="nav-text">Resnet 结构分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ResNet-短连接块"><span class="nav-number">4.1.1.</span> <span class="nav-text">ResNet 短连接块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么-ResNet-build-block-更容易训练？"><span class="nav-number">4.1.2.</span> <span class="nav-text">为什么 ResNet build block 更容易训练？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前向传播中帮助网络中一些层更容易实现恒等映射："><span class="nav-number">4.1.2.1.</span> <span class="nav-text">前向传播中帮助网络中一些层更容易实现恒等映射：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#反向传播中"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">反向传播中</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通常情况下"><span class="nav-text">通常情况下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#退化问题是网络加深的障碍"><span class="nav-text">退化问题是网络加深的障碍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本文效果（很大程度上解决了退化问题）："><span class="nav-text">本文效果（很大程度上解决了退化问题）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本文怎么解决退化问题？"><span class="nav-text">本文怎么解决退化问题？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Resnet-结构分析"><span class="nav-text">Resnet 结构分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ResNet-短连接块"><span class="nav-text">ResNet 短连接块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么-ResNet-build-block-更容易训练？"><span class="nav-text">为什么 ResNet build block 更容易训练？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前向传播中帮助网络中一些层更容易实现恒等映射："><span class="nav-text">前向传播中帮助网络中一些层更容易实现恒等映射：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#反向传播中"><span class="nav-text">反向传播中</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -728,6 +744,42 @@
       
 
       
+	  
+	  <!-- 文件位置：~/blog/themes/next/layout/_macro/sidebar.swig -->
+
+        
+        
+
+-        
+<!-- 文件位置：~/blog/themes/next/layout/_custom/sidebar.swig -->
+
+<div id="days"></div>
+<script>
+function show_date_time(){
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay=new Date("05/27/2017 15:13:14");
+    today=new Date();
+    timeold=(today.getTime()-BirthDay.getTime());
+    sectimeold=timeold/1000
+    secondsold=Math.floor(sectimeold);
+    msPerDay=24*60*60*1000
+    e_daysold=timeold/msPerDay
+    daysold=Math.floor(e_daysold);
+    e_hrsold=(e_daysold-daysold)*24;
+    hrsold=setzero(Math.floor(e_hrsold));
+    e_minsold=(e_hrsold-hrsold)*60;
+    minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+    seconds=setzero(Math.floor((e_minsold-minsold)*60));
+    document.getElementById('days').innerHTML="已运行 "+daysold+" 天 "+hrsold+" 小时 "+minsold+" 分 "+seconds+" 秒";
+}
+function setzero(i) {
+    if (i<10) {
+        i="0" + i
+    };
+    return i;
+}
+show_date_time();
+</script>
 
     </div>
   </aside>

@@ -413,19 +413,7 @@
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  3 分钟
-                </span>
               
             </div>
           
@@ -448,10 +436,7 @@
         
           
           xgboost 学习笔记
-主要内容均来自官方文档，官方文档是英文版，所以简单的翻译了一下，方便日后查看。详细内容见官方手册
-安装 XGBoost
-12345ubuntu -python3:    pip3 install xgboost 导入:    import xgboost as xgb
-数据
+主要内容均来自
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -611,19 +596,7 @@
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  3 分钟
-                </span>
               
             </div>
           
@@ -646,15 +619,7 @@
         
           
           pandas -2 索引和选择数据
-对于一种数据结构,最基本的操作就应该是增删改查了。
-
-1. 行列选择行选择和列选择有许多方法，很容易记混，常用的要记住。主要方法有三种： iloc, loc, []
-行选择
-切片 
-12345// 切片df[a:b]// 隔1行选择df[::2]
-
-指定位置
-df
+对于
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -814,19 +779,7 @@ df
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  2 分钟
-                </span>
               
             </div>
           
@@ -849,9 +802,7 @@ df
         
           
           pandas -1 数据结构
-pandas 基本操作都很简单，只是在刚开始学习的过程中，容易忘掉一些API，导致完成一些操作时，总会想着翻翻手册，这一系列博客，是对这些方法进行了梳理，可作为入门学习的参考材料。平时经常翻阅。
-
-“index” (axis=0, default), “columns”
+panda
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1011,19 +962,7 @@ pandas 基本操作都很简单，只是在刚开始学习的过程中，容易�
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  2 分钟
-                </span>
               
             </div>
           
@@ -1046,9 +985,7 @@ pandas 基本操作都很简单，只是在刚开始学习的过程中，容易�
         
           
           非均衡分类问题
-非均衡分类问题指的是每个类别的错误代价不同。
-比如疾病检测中,有病患者诊断健康的代价，要比健康人诊断成有病（可能性）造成的影响更为严重。
-对于常用的预测模型，通常是有预测的概率值，我们找到一个合适的截断点作为正负类别的界限。显然再不同的任务下，截断点选择是不同的。我们使用Precis
+非均衡分类问题指的是每个
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1208,19 +1145,7 @@ pandas 基本操作都很简单，只是在刚开始学习的过程中，容易�
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  3 分钟
-                </span>
               
             </div>
           
@@ -1243,11 +1168,7 @@ pandas 基本操作都很简单，只是在刚开始学习的过程中，容易�
         
           
           Adaboost 算法原理及推导
-Adaboost 是Boosting算法的代表。Boosting可将许多弱学习器组合达到强学习器的效果。
-Adaboost 是通过提升错分数据的权重值来改善模型的不足。其主要的流程是：
-
-先训练一个基学习器；
-根据基学习器的表现，改变样本的分布，使得错误分类的样本得
+Ada
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1407,19 +1328,7 @@ Adaboost 是通过提升错分数据的权重值来改善模型的不足。其�
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  9 分钟
-                </span>
               
             </div>
           
@@ -1442,13 +1351,7 @@ Adaboost 是通过提升错分数据的权重值来改善模型的不足。其�
         
           
           
-逻辑回归就是西瓜书里的对数几率回归，名为回归，实际则是分类算法。其实质是利用线性回归模型的预测结果来逼近真实标记的对数几率。
-一句话概括就是:
- 
-逻辑回归假设数据服从 **伯努利分布** ,通过 **极大化似然函数** 的方法，运用 **梯度下降** 来求解参数，来达到将数据二分类的目的。
-
-
-
+逻辑回归就是西瓜书里的对数几率回归，名
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1608,19 +1511,7 @@ Adaboost 是通过提升错分数据的权重值来改善模型的不足。其�
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  6 分钟
-                </span>
               
             </div>
           
@@ -1643,7 +1534,7 @@ Adaboost 是通过提升错分数据的权重值来改善模型的不足。其�
         
           
           决策树1- 基本概念决策树
-上图来自西瓜书，是决策树的一种树形。生成决策树的过程，不断的根据样本的属性( 样本的某个特征 )划分样本子集。每个结点选择当前最优的属性作为划分依据，将样本集合不断的划分成更小的子集合，直到子集合中样本类别一致时或者没有可以划分的属性值时，则停止划分，标记为叶结点(叶节点
+上图来自西瓜
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1803,19 +1694,7 @@ Adaboost 是通过提升错分数据的权重值来改善模型的不足。其�
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  5 分钟
-                </span>
               
             </div>
           
@@ -1838,19 +1717,7 @@ Adaboost 是通过提升错分数据的权重值来改善模型的不足。其�
         
           
           虚拟机类加载机制绑定
-绑定指的是把一个方法的调用与方法所在的类(方法主体)关联起来。
-
-
-静态绑定
-
-
-前期绑定。在程序执行前方法已经被绑定，此时由编译器或其它连接程序实现java当中的方法只有final，static，private和构造方法 是前期绑定的。
-
-
-动态绑定
-
-
-运行时绑定。在运行时
+绑定指的是把一个方
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2010,19 +1877,7 @@ Adaboost 是通过提升错分数据的权重值来改善模型的不足。其�
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  10 分钟
-                </span>
               
             </div>
           
@@ -2046,7 +1901,7 @@ Adaboost 是通过提升错分数据的权重值来改善模型的不足。其�
           
           参加软挑的一些感悟写在前边的话　　
 
-我本科一直在做嵌入式相关的项目,这是第一次参加软件类的竞赛,不得不说过程确实很刺激,最后止步杭厦赛区50强也很是遗憾,明明很接近,最后输在了代码效率上,本地成绩很好的 python代码 ,上传测评运行时间超限（官测环境比本地性能好，普遍情况是用时远超本地，其中华
+我
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2206,19 +2061,7 @@ Adaboost 是通过提升错分数据的权重值来改善模型的不足。其�
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  3 分钟
-                </span>
               
             </div>
           
@@ -2240,12 +2083,7 @@ Adaboost 是通过提升错分数据的权重值来改善模型的不足。其�
       
         
           
-          2015年 论文地址：  https://arxiv.org/pdf/1512.03385.pdf
-通常情况下
-神经网络层越深，特征的抽象程度越高，模型的表达能力越强，语义信息越丰富；
-同时，网络越深，退化问题 越难解决;
-
-退化问题是网络加深的障碍　　简单的增加深度，会导致 梯度弥散 或者 梯度爆
+          2015年 论文地址：  https:/
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2407,13 +2245,77 @@ Adaboost 是通过提升错分数据的权重值来改善模型的不足。其�
           
 
           
+<!-- 文件位置：~/blog/themes/next/layout/_custom/sidebar.swig -->
 
+<div id="days"></div>
+<script>
+function show_date_time(){
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay=new Date("05/27/2017 15:13:14");
+    today=new Date();
+    timeold=(today.getTime()-BirthDay.getTime());
+    sectimeold=timeold/1000
+    secondsold=Math.floor(sectimeold);
+    msPerDay=24*60*60*1000
+    e_daysold=timeold/msPerDay
+    daysold=Math.floor(e_daysold);
+    e_hrsold=(e_daysold-daysold)*24;
+    hrsold=setzero(Math.floor(e_hrsold));
+    e_minsold=(e_hrsold-hrsold)*60;
+    minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+    seconds=setzero(Math.floor((e_minsold-minsold)*60));
+    document.getElementById('days').innerHTML="已运行 "+daysold+" 天 "+hrsold+" 小时 "+minsold+" 分 "+seconds+" 秒";
+}
+function setzero(i) {
+    if (i<10) {
+        i="0" + i
+    };
+    return i;
+}
+show_date_time();
+</script>
         </div>
       </section>
 
       
 
       
+	  
+	  <!-- 文件位置：~/blog/themes/next/layout/_macro/sidebar.swig -->
+
+        
+        
+
+-        
+<!-- 文件位置：~/blog/themes/next/layout/_custom/sidebar.swig -->
+
+<div id="days"></div>
+<script>
+function show_date_time(){
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay=new Date("05/27/2017 15:13:14");
+    today=new Date();
+    timeold=(today.getTime()-BirthDay.getTime());
+    sectimeold=timeold/1000
+    secondsold=Math.floor(sectimeold);
+    msPerDay=24*60*60*1000
+    e_daysold=timeold/msPerDay
+    daysold=Math.floor(e_daysold);
+    e_hrsold=(e_daysold-daysold)*24;
+    hrsold=setzero(Math.floor(e_hrsold));
+    e_minsold=(e_hrsold-hrsold)*60;
+    minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+    seconds=setzero(Math.floor((e_minsold-minsold)*60));
+    document.getElementById('days').innerHTML="已运行 "+daysold+" 天 "+hrsold+" 小时 "+minsold+" 分 "+seconds+" 秒";
+}
+function setzero(i) {
+    if (i<10) {
+        i="0" + i
+    };
+    return i;
+}
+show_date_time();
+</script>
 
     </div>
   </aside>
