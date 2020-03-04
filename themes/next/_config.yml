@@ -161,7 +161,7 @@ toc:
   enable: true
 
   # Automatically add list number to toc.
-  number: true
+  number: false
 
   # If true, all words will placed on next lines if header width longer then sidebar width.
   wrap: false
@@ -216,7 +216,7 @@ excerpt_description: true
 #  文章内容预览
 auto_excerpt:
   enable: true
-  length: 150
+  length: 20
 
 # Post meta display settings
 post_meta:
@@ -230,7 +230,7 @@ post_meta:
 post_wordcount:
   item_text: true
   wordcount: true
-  min2read: true
+  min2read: false
   totalcount: true
   separated_meta: true
 

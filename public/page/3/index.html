@@ -413,19 +413,7 @@
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  2 分钟
-                </span>
               
             </div>
           
@@ -447,18 +435,7 @@
       
         
           
-          2014年 论文地址：  https://arxiv.org/abs/1312.4400
-论文核心NIN特点: 
-
-微型网络: 
-增强模型在感受野（receptive field）内对局部区域的辨别能力;  
-
-
-
-
-GAP全局平均池化: 
-强化了特征图与分类的对应关系;
-GAP本身是结构化的正则化
+          2014年 论文地址：  https:/
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -618,19 +595,7 @@ GAP本身是结构化的正则化
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  18 分钟
-                </span>
               
             </div>
           
@@ -658,15 +623,7 @@ GAP本身是结构化的正则化
 删除线
 链接
 
-C++学习笔记类型转换：
-隐式转换： 低类型转换为高类型
-浮点数（直接舍掉小数，不四舍五入） + 整数
-
-显式转换：
- int **(**z**) = (**int**)** z **= static_cast\&lt;**int**\&gt; (**z**)**
-
-
-
+C++学习
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -826,19 +783,7 @@ C++学习笔记类型转换：
               
 
               
-                <span class="post-meta-divider">|</span>
-              
 
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1 分钟
-                </span>
               
             </div>
           
@@ -861,19 +806,7 @@ C++学习笔记类型转换：
         
           
           内容概要
-本地  首次上传到  github
-本地  更新到   github
-github 首次下载到  本地
-github  更新到  本地
-
-本地首次上传到 github
-进入 github官网，选择 New repository
-
-
-复制地址  http:XXXXXXXXXX.git
-
-
-本
+本地  首次上传到  gith
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1035,13 +968,77 @@ github  更新到  本地
           
 
           
+<!-- 文件位置：~/blog/themes/next/layout/_custom/sidebar.swig -->
 
+<div id="days"></div>
+<script>
+function show_date_time(){
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay=new Date("01/18/2019 15:13:14");
+    today=new Date();
+    timeold=(today.getTime()-BirthDay.getTime());
+    sectimeold=timeold/1000
+    secondsold=Math.floor(sectimeold);
+    msPerDay=24*60*60*1000
+    e_daysold=timeold/msPerDay
+    daysold=Math.floor(e_daysold);
+    e_hrsold=(e_daysold-daysold)*24;
+    hrsold=setzero(Math.floor(e_hrsold));
+    e_minsold=(e_hrsold-hrsold)*60;
+    minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+    seconds=setzero(Math.floor((e_minsold-minsold)*60));
+    document.getElementById('days').innerHTML="已运行 "+daysold+" 天 "+hrsold+" 小时 "+minsold+" 分 "+seconds+" 秒";
+}
+function setzero(i) {
+    if (i<10) {
+        i="0" + i
+    };
+    return i;
+}
+show_date_time();
+</script>
         </div>
       </section>
 
       
 
       
+	  
+	  <!-- 文件位置：~/blog/themes/next/layout/_macro/sidebar.swig -->
+
+        
+        
+
+-        
+<!-- 文件位置：~/blog/themes/next/layout/_custom/sidebar.swig -->
+
+<div id="days"></div>
+<script>
+function show_date_time(){
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay=new Date("01/18/2019 15:13:14");
+    today=new Date();
+    timeold=(today.getTime()-BirthDay.getTime());
+    sectimeold=timeold/1000
+    secondsold=Math.floor(sectimeold);
+    msPerDay=24*60*60*1000
+    e_daysold=timeold/msPerDay
+    daysold=Math.floor(e_daysold);
+    e_hrsold=(e_daysold-daysold)*24;
+    hrsold=setzero(Math.floor(e_hrsold));
+    e_minsold=(e_hrsold-hrsold)*60;
+    minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+    seconds=setzero(Math.floor((e_minsold-minsold)*60));
+    document.getElementById('days').innerHTML="已运行 "+daysold+" 天 "+hrsold+" 小时 "+minsold+" 分 "+seconds+" 秒";
+}
+function setzero(i) {
+    if (i<10) {
+        i="0" + i
+    };
+    return i;
+}
+show_date_time();
+</script>
 
     </div>
   </aside>

@@ -169,6 +169,29 @@
           {% endif %}
         </div>
       {% endif %}
+	  
+	  <!-- 文件位置：~/blog/themes/next/layout/_macro/sidebar.swig -->
+
+        {# Blogroll #}
+        {% if theme.links %}
+          <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
+              {{ theme.links_title }}&nbsp;
+              <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
+            </div>
+            <ul class="links-of-blogroll-list">
+              {% for name, link in theme.links %}
+                <li class="links-of-blogroll-item">
+                  <a href="{{ link }}" title="{{ name }}" target="_blank">{{ name }}</a>
+                </li>
+              {% endfor %}
+            </ul>
++        {% include '../_custom/sidebar.swig' %}
+          </div>
+         {% endif %}
+
+-        {% include '../_custom/sidebar.swig' %}
 
     </div>
   </aside>
