@@ -1,5 +1,5 @@
 ---
-`title: mysql-必知必会7-综合内容
+title: mysql-必知必会7-综合内容
 date: 2020-04-11 11:35:36
 categories: mysql
 tags: mysql-必知必会系列
