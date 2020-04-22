@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.elgong.top/"/>
-  <updated>2020-04-22T03:57:29.854Z</updated>
+  <updated>2020-04-22T04:22:27.029Z</updated>
   <id>http://www.elgong.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>将博客搬至CSDN</title>
+    <link href="http://www.elgong.top/2020/04/22/%E5%B0%86%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%87%B3CSDN/"/>
+    <id>http://www.elgong.top/2020/04/22/将博客搬至CSDN/</id>
+    <published>2020-04-22T04:21:03.000Z</published>
+    <updated>2020-04-22T04:22:27.029Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文为满足将博客内容搬迁至csdn 的审核要求。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本文为满足将博客内容搬迁至csdn 的审核要求。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="闲聊" scheme="http://www.elgong.top/categories/%E9%97%B2%E8%81%8A/"/>
+    
+    
+      <category term="闲聊" scheme="http://www.elgong.top/tags/%E9%97%B2%E8%81%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>Java 向上转型&amp;向下转型</title>
@@ -496,32 +522,6 @@
       
         &lt;h1 id=&quot;pandas-2-索引和选择数据&quot;&gt;&lt;a href=&quot;#pandas-2-索引和选择数据&quot; class=&quot;headerlink&quot; title=&quot;pandas -2 索引和选择数据&quot;&gt;&lt;/a&gt;pandas -2 索引和选择数据&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p
-      
-    
-    </summary>
-    
-      <category term="pandas系列教程" scheme="http://www.elgong.top/categories/pandas%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="pandas" scheme="http://www.elgong.top/tags/pandas/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pandas -1数据结构</title>
-    <link href="http://www.elgong.top/2019/07/22/pandas-1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    <id>http://www.elgong.top/2019/07/22/pandas-1数据结构/</id>
-    <published>2019-07-22T01:01:01.000Z</published>
-    <updated>2020-02-20T04:41:37.812Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="pandas-1-数据结构"><a href="#pandas-1-数据结构" class="headerlink" title="pandas -1 数据结构"></a>pandas -1 数据结构</h1><blockquote><p>pandas 基本操作都很简单，只是在刚开始学习的过程中，容易忘掉一些API，导致完成一些操作时，总会想着翻翻手册，这一系列博客，是对这些方法进行了梳理，可作为入门学习的参考材料。平时经常翻阅。</p></blockquote><p>“index” (axis=0, default), “columns” (axis=1)</p><h2 id="1-Series"><a href="#1-Series" class="headerlink" title="1. Series"></a>1. Series</h2><blockquote><p>Series 是一个带有 名称 和索引的一维数组。</p></blockquote><h3 id="创建seriex"><a href="#创建seriex" class="headerlink" title="创建seriex"></a>创建seriex</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// Series 数组生成，指定数据类型</span><br><span class="line">In:   </span><br><span class="line">    user_age = pd.Series(data=[18, 30, 25, 40], dtype=float)</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">        0    18</span><br><span class="line">        1    30</span><br><span class="line">        2    25</span><br><span class="line">        3    40</span><br><span class="line">        dtype: int64</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 增加索引 index</span><br><span class="line">In:   </span><br><span class="line">    user_age.index = [&quot;Tom&quot;, &quot;Bob&quot;, &quot;Mary&quot;, &quot;James&quot;]</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">    Tom      18</span><br><span class="line">    Bob      30</span><br><span class="line">    Mary     25</span><br><span class="line">    James    40</span><br><span class="line">    dtype: int64</span><br><span class="line">    </span><br><span class="line">// 表头</span><br><span class="line">In:</span><br><span class="line">    user_age.index.name(&quot;name&quot;)</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">    name</span><br><span class="line">    Tom      18</span><br><span class="line">    Bob      30</span><br><span class="line">    Mary     25</span><br><span class="line">    James    40</span><br><span class="line">    dtype: int64</span><br></pre></td></tr></table></figure><h3 id="像字典一样使用series"><a href="#像字典一样使用series" class="headerlink" title="像字典一样使用series"></a>像字典一样使用series</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// index 当键值</span><br><span class="line">In: </span><br><span class="line">    user_age[&quot;Tom&quot;]</span><br><span class="line">    user_age.get(&quot;Tom&quot;)</span><br><span class="line"></span><br><span class="line">// 切片-列</span><br><span class="line">In:</span><br><span class="line">    user_age[2:3]</span><br><span class="line">    </span><br><span class="line">// 按条件查找</span><br><span class="line">In:</span><br><span class="line">    user_age[user_age &gt; 30]</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">    name</span><br><span class="line">    James    40.0</span><br><span class="line">    Name: user_age_info, dtype: float64</span><br></pre></td></tr></table></figure><h3 id="像向量一样使用series"><a href="#像向量一样使用series" class="headerlink" title="像向量一样使用series"></a>像向量一样使用series</h3><blockquote><p>可以传递给np方法</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 整列加减</span><br><span class="line">In:</span><br><span class="line">    user_age + 1</span><br><span class="line">    </span><br><span class="line">Out:</span><br><span class="line">    name</span><br><span class="line">    Tom      19.0</span><br><span class="line">    Bob      31.0</span><br><span class="line">    Mary     26.0</span><br><span class="line">    James    41.0</span><br><span class="line">    Name: user_age_info, dtype: float64</span><br></pre></td></tr></table></figure><h2 id="2-DataFrame"><a href="#2-DataFrame" class="headerlink" title="2. DataFrame"></a>2. DataFrame</h2><blockquote><p>DataFrame 是一个带有 名称 和索引的二维数组，像一张Excel表格。</p></blockquote><h3 id="创建DataFrame"><a href="#创建DataFrame" class="headerlink" title="创建DataFrame"></a>创建DataFrame</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// DataFrame 根据字典生成</span><br><span class="line"></span><br><span class="line">In:</span><br><span class="line">    index = pd.Index(data=[&quot;Tom&quot;, &quot;Bob&quot;, &quot;Mary&quot;, &quot;James&quot;], name=&quot;name&quot;)</span><br><span class="line">    </span><br><span class="line">    data = &#123;</span><br><span class="line">        &quot;age&quot;: [18, 30, 40],</span><br><span class="line">        &quot;city&quot;: [&quot;BeiJing&quot;, &quot;ShangHai&quot;, &quot;HangZhou&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    user_info = pd.DataFrame(data=data, index=index)</span><br><span class="line">    user_info</span><br><span class="line"></span><br><span class="line">Out:</span><br><span class="line">    </span><br><span class="line">// DataFrame 根据二维列表生成</span><br><span class="line">In:</span><br><span class="line">    data = [[18, &quot;BeiJing&quot;], </span><br><span class="line">            [30, &quot;ShangHai&quot;], </span><br><span class="line">            [25, &quot;GuangZhou&quot;], </span><br><span class="line">            [40, &quot;ShenZhen&quot;]]</span><br><span class="line">    columns = [&quot;age&quot;, &quot;city&quot;]</span><br><span class="line">    </span><br><span class="line">    user_info = pd.DataFrame(data=data, index=index, columns=columns)</span><br><span class="line">    user_info</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;pandas-1-数据结构&quot;&gt;&lt;a href=&quot;#pandas-1-数据结构&quot; class=&quot;headerlink&quot; title=&quot;pandas -1 数据结构&quot;&gt;&lt;/a&gt;pandas -1 数据结构&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;pandas 基本操作
       
     
     </summary>
