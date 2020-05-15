@@ -119,11 +119,3 @@ public class Test {
 
 ```
 
-<font color="red"><big>测试内容</big></font>
-\*
-<font color=gray size=72 face="微软雅黑"> 字体颜色和字体大小</font>
-~~删除线~~
-
-[链接](http://zhuzhuyule.xyz)
-
-![logo](图片测试！/test.jpg)
