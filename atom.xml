@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.elgong.top/"/>
-  <updated>2020-04-22T04:22:27.029Z</updated>
+  <updated>2020-05-15T16:08:18.775Z</updated>
   <id>http://www.elgong.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>redis学习-redis的价值</title>
+    <link href="http://www.elgong.top/2020/05/12/redis%E5%AD%A6%E4%B9%A0-redis%E7%9A%84%E4%BB%B7%E5%80%BC/"/>
+    <id>http://www.elgong.top/2020/05/12/redis学习-redis的价值/</id>
+    <published>2020-05-11T16:06:27.000Z</published>
+    <updated>2020-05-15T16:08:18.775Z</updated>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><blockquote><p>本系列文章整理摘抄自<redis 开发与运维=""></redis></p><h1 id="Redis-是什么？"><a href="#Redis-是什么？" class="headerlink" title="Redis 是什么？"></a>Redis 是什么？</h1></blockquote><p>Redis 是一种 基于键值对的 <code>NOSQL</code> 内存数据库, 具有丰富的数据类型和基于内存的快速读写能力,单线程命令处理机制。</p><p>Redis 的值类型有多种：</p><ul><li>string</li><li>hash</li><li>list</li><li>set</li><li>zset (有序集合)</li><li>Bitmaps (位图)</li><li>HyperLogLog</li><li>GEO  (地理信息定位)</li></ul><p>Redis 提供了一下的附加功能：</p><ul><li>键的有效期</li><li>发布订阅</li><li>事务</li><li>Pipeline 流水线</li><li>Lua脚本</li><li>可持久化（RDB 和 AOF 两种策略）</li></ul><h1 id="Redis-有哪些特点？"><a href="#Redis-有哪些特点？" class="headerlink" title="Redis 有哪些特点？"></a>Redis 有哪些特点？</h1><p>Redis 有5大重要的特征：</p><ul><li><strong>读写速度快</strong>（读写速度可达10万/秒）<ul><li>基于内存</li><li>C 语言实现</li><li>单线程架构（IO多路模型），省却了线程间调度</li></ul></li><li><strong>基于键值对的字典服务器</strong></li><li><strong>可持久化</strong></li><li><strong>主从复制</strong></li><li><strong>高可用 &amp; 分布式</strong></li></ul><h1 id="Redis-应用场景有哪些？"><a href="#Redis-应用场景有哪些？" class="headerlink" title="Redis 应用场景有哪些？"></a>Redis 应用场景有哪些？</h1><ul><li>缓存</li><li>排行榜系统(提供列表和有序集合)</li><li>计数器 （网站播放数，电商浏览数）</li><li>社交网络（点赞，粉丝，共同爱好，推送，下拉刷新）</li><li>消息队列</li><li>session 共享</li><li>限制访问的次数</li></ul><h1 id="为什么选择单线程？"><a href="#为什么选择单线程？" class="headerlink" title="为什么选择单线程？"></a>为什么选择单线程？</h1><p>官方的解释：</p><p>我们知道，运算和处理速度上，CPU &gt;&gt;&gt; 内存 &gt;&gt;&gt; 硬盘和网络。</p><ul><li>原因1：<strong>单线程内存读写速度优于多线程的并发切换消耗</strong></li></ul><p>CPU并不是Redis的瓶颈，因为通常Redis要么受内存限制，要么受网络限制，而多线程的线程调度消耗的资源要比在内存读取数据大得多，所以选择了单线程 + IO 多路复用模型。</p><ul><li>原因2：<strong>数据的一致性</strong></li></ul><p>单线程的操作，一定是线程安全的，并且避免了使用锁同步等。</p><font color="red" size="4">为了最大程度地利用CPU，可以在同一服务器上启动多个Redis实例，并为每个实例绑定一个CPU.  (Linux 通过 `taskset -c 1,2,3 /etc/init.d/mysql start`)</font><h1 id="Redis-的不足之处？"><a href="#Redis-的不足之处？" class="headerlink" title="Redis 的不足之处？"></a>Redis 的不足之处？</h1><p>数据有冷热之分，热点数据可以放在Redis 中，加速读写，减少对后端数据库的访问压力。</p><p>但是过于冷的数据，会浪费内存空间。</p><h1 id="与同类型的技术的横向对比？"><a href="#与同类型的技术的横向对比？" class="headerlink" title="与同类型的技术的横向对比？"></a>与同类型的技术的横向对比？</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;[toc]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本系列文章整理摘抄自&lt;redis 开发与运维=&quot;&quot;&gt;&lt;/redis&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Redis-是什么？&quot;&gt;&lt;a href=&quot;#Redis-是什么？&quot; class=&quot;headerlink&quot; title=&quot;Redi
+      
+    
+    </summary>
+    
+      <category term="缓存中间件" scheme="http://www.elgong.top/categories/%E7%BC%93%E5%AD%98%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+    
+      <category term="redis" scheme="http://www.elgong.top/tags/redis/"/>
+    
+  </entry>
   
   <entry>
     <title>将博客搬至CSDN</title>
@@ -504,32 +532,6 @@
     
     
       <category term="XGBoost" scheme="http://www.elgong.top/tags/XGBoost/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pandas-2索引和选择数据</title>
-    <link href="http://www.elgong.top/2019/07/25/pandas-2%E7%B4%A2%E5%BC%95%E5%92%8C%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/"/>
-    <id>http://www.elgong.top/2019/07/25/pandas-2索引和选择数据/</id>
-    <published>2019-07-24T23:01:01.000Z</published>
-    <updated>2020-02-20T04:41:37.812Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="pandas-2-索引和选择数据"><a href="#pandas-2-索引和选择数据" class="headerlink" title="pandas -2 索引和选择数据"></a>pandas -2 索引和选择数据</h1><blockquote><p>对于一种数据结构,最基本的操作就应该是增删改查了。</p></blockquote><h2 id="1-行列选择"><a href="#1-行列选择" class="headerlink" title="1. 行列选择"></a>1. 行列选择</h2><p>行选择和列选择有许多方法，很容易记混，常用的要记住。<br>主要方法有三种： <code>iloc</code>, <code>loc</code>, <code>[]</code></p><h3 id="行选择"><a href="#行选择" class="headerlink" title="行选择"></a>行选择</h3><ul><li><p>切片 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 切片</span><br><span class="line">df[a:b]</span><br><span class="line"></span><br><span class="line">// 隔1行选择</span><br><span class="line">df[::2]</span><br></pre></td></tr></table></figure></li><li><p>指定位置</p><p><code>df.iloc[1, 1]</code></p><p><code>df.iloc[1:10, 2:3]</code></p><p><code>df.iloc[1:10][&#39;Price&#39;]</code></p></li><li><p>指定索引</p><p><code>df.loc[&quot;index1&quot;, &quot;index2&quot;]</code></p></li><li><p>按照条件查找</p><p><code>df[( df[&quot;row2&quot;] == 1) &amp; (df[&quot;row2&quot;] == &quot;null&quot;)]</code></p><p><code>df.loc[( df[&quot;row2&quot;] == 1) &amp; (df[&quot;row2&quot;] == &quot;null&quot;)]</code></p></li><li><p>根据列的多个值,选择行</p><p><code>List = [1,2,3,4,5]</code><br><code>train[train[&quot;customer_id&quot;].isin(List)]</code></p></li></ul><h3 id="列选择"><a href="#列选择" class="headerlink" title="列选择"></a>列选择</h3><ul><li><p>通过列标签选择单列</p><p>  <code>df[&quot;price&quot;]</code></p></li><li><p>通过列标签选择多列</p><p> <code>df[[&quot;price&quot;, &quot;time&quot;]]</code></p></li><li><p>通过列索引,选择前3列</p><p><code>df.iloc[:, :3]</code> </p></li></ul><h3 id="行列选择"><a href="#行列选择" class="headerlink" title="行列选择"></a>行列选择</h3><p>  <code>df.loc[&quot;index1&quot; : &quot;index2&quot;,  [&quot;price&quot;]]</code></p><p>  <code>df.iloc[a:b][&#39;Price&#39;]</code></p><h3 id="随机采样行或者列"><a href="#随机采样行或者列" class="headerlink" title="随机采样行或者列"></a>随机采样行或者列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s.sample(frac=0.5)</span><br><span class="line">// 参数</span><br><span class="line">// 默认选择行，n = 行数，  frac = 比例</span><br><span class="line">// replace: 默认False 无放回采样</span><br><span class="line">// weights: 样本采样权重</span><br><span class="line">// axis:  默认=0 行,  =1 列</span><br><span class="line">// random_state=2</span><br></pre></td></tr></table></figure><h3 id="分类别等数量抽样"><a href="#分类别等数量抽样" class="headerlink" title="分类别等数量抽样"></a>分类别等数量抽样</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 降采样 -- 分类抽样</span><br><span class="line">def subSample(df_x, splitAttribute = &quot;Attribute4&quot;):</span><br><span class="line">    </span><br><span class="line">    subsampleNum = min(df_x.groupby(splitAttribute).size())</span><br><span class="line">    print(subsampleNum)</span><br><span class="line">    df_x_sub = df_x.iloc[1:2,:]</span><br><span class="line">    #df_y_sub = df_y.iloc[1:2,:]</span><br><span class="line">    for label in df_x[splitAttribute].unique():</span><br><span class="line">        tmp_x = df_x[df_x[splitAttribute] == label]</span><br><span class="line"></span><br><span class="line">        random_list = random.sample(range(0,len(tmp_x)),subsampleNum )</span><br><span class="line">        df_x_sub = df_x_sub.append(tmp_x.iloc[random_list,:])</span><br><span class="line">        df_y_sub.append(tmp_y.iloc[random_list,:])</span><br><span class="line">    return df_x_sub #, df_y_sub</span><br></pre></td></tr></table></figure><h2 id="2-行的增删改查"><a href="#2-行的增删改查" class="headerlink" title="2. 行的增删改查"></a>2. 行的增删改查</h2><h3 id="增加"><a href="#增加" class="headerlink" title="增加"></a>增加</h3><blockquote><p>单列</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 末尾增加</span><br><span class="line">   df[&quot;new col&quot;] = None</span><br><span class="line">   </span><br><span class="line">// 指定位置增加，在2列后</span><br><span class="line">   df.insert(2,&apos;city&apos;)</span><br></pre></td></tr></table></figure><blockquote><p>多列</p></blockquote><p>   <code>pd.concat([df, pd.DataFrame(columns=[&quot;C&quot;,&quot;D&quot;])])</code></p><blockquote><p>单行（待验证）</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// loc 添加</span><br><span class="line">  df.loc[‘5‘] = [3, 3, 3, 3]</span><br><span class="line">    </span><br><span class="line">// set_value 添加</span><br><span class="line">  df.set_value(‘5‘, df.columns, [3,3,3,3], takeable=False)</span><br></pre></td></tr></table></figure><blockquote><p>多行</p></blockquote><p>多行相当于合并两张表了,可以参考(merge,concat)<a href="https://note.youdao.com/" target="_blank" rel="noopener">方法</a>。</p><p><code>test_ = pd.merge(tmp, data.loc[:,[&quot;customer_id&quot;, &quot;label&quot;]],on=[&#39;customer_id&#39;],how=&#39;left&#39;,copy=False&quot;)</code></p><h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><blockquote><p>列</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// del 方法</span><br><span class="line">   def df[&quot;col_name&quot;]</span><br><span class="line"></span><br><span class="line">//根据列名 drop 方法</span><br><span class="line">   df.drop([&quot;b&quot;, &quot;c&quot;], axis=1,inplace = True)</span><br><span class="line">axis = 1 列</span><br><span class="line">axis = 0 行</span><br><span class="line"></span><br><span class="line">// 根据列号 drop 方法</span><br><span class="line">   df.drop(df.columns[[1,2]], axis=1, inplace=True)</span><br></pre></td></tr></table></figure><blockquote><p>行</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 根据索引 删除行</span><br><span class="line">   df = df.drop([1, 2])</span><br><span class="line"></span><br><span class="line">// 根据value 删除行</span><br><span class="line">   df = df[~df[&quot;col&quot;].isin(5,9)</span><br></pre></td></tr></table></figure><blockquote><p>按照条件删除行</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.drop(df[df[&quot;order_pay_time&quot;] &lt; pd.to_datetime(&quot;2013-11-12 23:59:44&quot;) ].index)</span><br></pre></td></tr></table></figure><h3 id="修改与查找"><a href="#修改与查找" class="headerlink" title="修改与查找"></a>修改与查找</h3><blockquote><p>单值修改和查找时, 参考选择行列方法。</p><p>多值查找时，</p></blockquote><h4 id="按条件查找"><a href="#按条件查找" class="headerlink" title="按条件查找"></a>按条件查找</h4><p> <code>df_train[( df_train[&quot;row&quot;] == 1) &amp;( == &quot;null&quot;)]</code></p><h4 id="query-查找"><a href="#query-查找" class="headerlink" title="query 查找"></a>query 查找</h4><p> <code>df.query(&#39;(a &lt; b) &amp; (b &lt; c)&#39;)</code></p><h4 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h4><blockquote><p>单个替换，inplace = True 覆盖源文件</p></blockquote><p>  <code>df.replace(to_replace, value, inplace = True)</code></p><blockquote><p>多值替换—-字典</p></blockquote><p>  <code>df.replace({&quot;A&quot;:&quot;B&quot;,  29:100})</code></p><blockquote><p>按条件替换</p></blockquote><p>  <code>df.where(df &gt; 0, -df, inplace=True)</code></p><h4 id="交换两列的位置"><a href="#交换两列的位置" class="headerlink" title="交换两列的位置"></a>交换两列的位置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[[&apos;B&apos;, &apos;A&apos;]] = df[[&apos;A&apos;, &apos;B&apos;]]</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;pandas-2-索引和选择数据&quot;&gt;&lt;a href=&quot;#pandas-2-索引和选择数据&quot; class=&quot;headerlink&quot; title=&quot;pandas -2 索引和选择数据&quot;&gt;&lt;/a&gt;pandas -2 索引和选择数据&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p
-      
-    
-    </summary>
-    
-      <category term="pandas系列教程" scheme="http://www.elgong.top/categories/pandas%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="pandas" scheme="http://www.elgong.top/tags/pandas/"/>
     
   </entry>
   
