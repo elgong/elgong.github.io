@@ -2,7 +2,9 @@
 title: redis学习-Jedis 使用
 date: 2020-05-16 00:17:58
 categories: 缓存中间件
-tags: redis, jedis
+tags: 
+- redis
+- jedis
 ---
 
 [toc] 

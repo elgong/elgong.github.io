@@ -2,7 +2,11 @@
 title: redis学习-缓存设计中要提前考虑的事情
 date: 2020-05-16 00:16:33
 categories: 缓存中间件
-tags: redis, 缓存雪崩， 缓存穿透， 缓存击穿
+tags: 
+- redis
+- 缓存雪崩
+- 缓存穿透
+- 缓存击穿
 ---
 
 [toc] 
