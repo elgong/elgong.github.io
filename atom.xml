@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.elgong.top/"/>
-  <updated>2020-06-07T13:43:51.929Z</updated>
+  <updated>2020-06-07T13:44:57.867Z</updated>
   <id>http://www.elgong.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.elgong.top/2020/06/01/redis-%E6%8C%81%E4%B9%85%E5%8C%96/"/>
     <id>http://www.elgong.top/2020/06/01/redis-持久化/</id>
     <published>2020-05-31T16:16:27.000Z</published>
-    <updated>2020-06-07T13:43:51.929Z</updated>
+    <updated>2020-06-07T13:44:57.867Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Redis-持久化"><a href="#Redis-持久化" class="headerlink" title="Redis 持久化"></a>Redis 持久化</h1><p>[toc]</p><p>Redis 是基于内存的k-v服务，内存在断电时无法保存数据，因此需要做数据的备份操作。</p><p>Redis 有两种备份方式：</p><ul><li>内存快照的持久化保存 RDB<ul><li>适合全量复制，容灾备份，每日周期性定时执行（间隔6小时） </li><li>压缩后的二进制文件，恢复速度快</li><li>耗时长，无法做到实时备份</li></ul></li><li>记录修改操作日志的持久化保存 AOF<ul><li>实时备份（1s 一次）</li></ul></li></ul><h2 id="RDB"><a href="#RDB" class="headerlink" title="RDB"></a>RDB</h2><blockquote><p>内存快照的二进制压缩格式</p></blockquote><h3 id="RDB-备份流程"><a href="#RDB-备份流程" class="headerlink" title="RDB 备份流程"></a>RDB 备份流程</h3><p><img src="https://note.youdao.com/yws/public/resource/e035e0d66921bedda6618e6b77e6a985/xmlnote/7FD7F9AB88734CB0A9E0227F16C4BB2E/31348" alt="image"> </p><ol><li>执行<code>bgsave</code> 命令，判断RDF 或 AOF子进程是否在运行，如果存在则直接退出；</li><li>主进程<code>fork</code> 产生子进程，子进程用来执行备份操作（<strong>会阻塞主进程</strong>）；</li><li>子进程根据父进程生成的临时快照文件来创建 RDB 文件，替换旧 RDB 文件；</li><li>子进程发送完成信号给父进程，父进程会统计相关信息；</li></ol><blockquote><p>linux 进程中的 fork :<br>fork函数得到的子进程从父进程的继承了整个进程的地址空间，包括：进程上下文、进程堆栈、内存信息、打开的文件描述符、信号控制设置、进程优先级、进程组号、当前工作目录、根目录、资源限制、控制终端等。</p><p>fork 不会拷贝父进程的物理空间，会共用</p></blockquote><h3 id="RDB-什么情况下会被触发？"><a href="#RDB-什么情况下会被触发？" class="headerlink" title="RDB 什么情况下会被触发？"></a>RDB 什么情况下会被触发？</h3><p>触发 RDB 备份 主要是两个命令： <code>save</code> 和 <code>bgsave</code></p><ul><li>save:<ul><li>主线程去执行 RDB 备份，所以无法响应请求；</li></ul></li><li>bgsave:<ul><li>子进程去执行备份，只在fork 阶段产生阻塞；</li></ul></li></ul><p>所以，我们只需要知道 <code>bgsave</code> 什么时候触发调用就行。</p><ul><li>配置<code>save m n</code> ：即 m 秒内数据集被修改了n次，则触发<code>bgsave</code> </li><li>从节点的全量复制：主节点会将<code>RDB</code>文件传递到从节点</li><li><code>debug reload</code> 时</li><li>执行 <code>shutdown</code>时</li><li>从节点需要全量复制时？？？</li></ul><p><strong>AOF 默认是关闭的，但优先级高于 RDB</strong></p><h3 id="相关的指令"><a href="#相关的指令" class="headerlink" title="相关的指令"></a>相关的指令</h3><h4 id="运行期指定-RDB-文件保存地址"><a href="#运行期指定-RDB-文件保存地址" class="headerlink" title="运行期指定 RDB 文件保存地址"></a>运行期指定 RDB 文件保存地址</h4><p><code>config set dir {newDir}</code></p><h2 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h2><p>append only file</p><blockquote><p>日志记录修改操作，可以实时记录备份 </p></blockquote><h3 id="AOF-备份流程"><a href="#AOF-备份流程" class="headerlink" title="AOF 备份流程"></a>AOF 备份流程</h3><p><img src="https://note.youdao.com/yws/public/resource/e035e0d66921bedda6618e6b77e6a985/xmlnote/2C252F2CBCCD410F8E742C301F097554/31383" alt="image"></p><ol><li>写入命令会追加到 aof_buf 缓冲区中;</li><li>根据对应的策略 写入到硬盘；</li><li>当文件过于大时，会重写 AOF 文件;</li><li>重启优先加载 AOF 文件;</li></ol><h4 id="AOF-备份-1-命令写入"><a href="#AOF-备份-1-命令写入" class="headerlink" title="AOF 备份-1.命令写入"></a>AOF 备份-1.命令写入</h4><ul><li><p>先写入缓存区，然后再备份到硬盘中；</p></li><li><p>直接写入文本协议格式</p></li></ul><h4 id="AOF-备份-2-文件同步策略"><a href="#AOF-备份-2-文件同步策略" class="headerlink" title="AOF 备份-2.文件同步策略"></a>AOF 备份-2.文件同步策略</h4><p>同步策略： 配置 <code>appendfsync</code> 参数</p><ul><li>always</li><li>everysec （默认配置， 1s 执行一次写入）</li><li>no</li></ul><h4 id="AOF-备份-3-重写机制"><a href="#AOF-备份-3-重写机制" class="headerlink" title="AOF 备份-3.重写机制"></a>AOF 备份-3.重写机制</h4><p>重写的主要点：</p><ul><li>被删除的无效数据不需要在写入</li><li>过期数据不需要在写入</li><li>多条命令可以合并</li></ul><p><strong>手动触发重写命令</strong>： <code>bgrewriteaof</code></p><h4 id="AOF-备份-4-重启加载"><a href="#AOF-备份-4-重启加载" class="headerlink" title="AOF 备份-4. 重启加载"></a>AOF 备份-4. 重启加载</h4><p>比 RDB 优先级别高</p><h3 id="如何配置相关参数？"><a href="#如何配置相关参数？" class="headerlink" title="如何配置相关参数？"></a>如何配置相关参数？</h3><ol><li>开启 AOF功能<br> 配置 <code>appendonly yes</code></li></ol><h3 id="AOF-什么情况下会被触发？"><a href="#AOF-什么情况下会被触发？" class="headerlink" title="AOF 什么情况下会被触发？"></a>AOF 什么情况下会被触发？</h3><p>根据备份策略，一般是定时触发</p>]]></content>
     
@@ -35,7 +35,7 @@
     
     </summary>
     
-      <category term="持久化" scheme="http://www.elgong.top/categories/%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+      <category term="缓存中间件" scheme="http://www.elgong.top/categories/%E7%BC%93%E5%AD%98%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
     
     
       <category term="redis" scheme="http://www.elgong.top/tags/redis/"/>
