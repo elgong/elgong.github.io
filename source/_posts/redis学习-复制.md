@@ -1,16 +1,17 @@
 ---
-title: redis-复制(从主到从)
-title: redis-持久化
-date: 2020-06-3 00:11:17
+title: redis学习-复制
 categories: 缓存中间件
 tags: redis
+
 ---
+
+[toc] 
 
 # Redis6-复制（由主到从）
 
 > 当存在主从多个节点时，才会出现复制，且复制的方向只能由主节点流向从节点
 
-[TOC]
+[toc]
 
 ## 一、 redis 集群的拓扑结构
 
@@ -121,5 +122,5 @@ tags: redis
 - 参数 `repl-ping-slave-period` 可以设置时间间隔
 
 **从节点**：
-- 每 1s 发送一次 `replconf ack{offset}`
+- 每1s 发送一次 `replconf ack{offset}`
 - 上报自身已经复制到的偏移量

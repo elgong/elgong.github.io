@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="redis,">
 
 
 
@@ -101,13 +101,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="elgong&#39;s Home.">
-<meta property="og:url" content="http://www.elgong.top/categories/Java多态/index.html">
+<meta name="description" content="[toc]  Redis6-复制（由主到从） 当存在主从多个节点时，才会出现复制，且复制的方向只能由主节点流向从节点  [toc] 一、 redis 集群的拓扑结构主备结构-一主一从 可以只在从节点开启 AOF  读写分类结构-一主多从 慢查询可以 使用从节点，防止主节点的阻塞，提高并发性  解决网络负载过重-树状主从结构 一主多从，主节点的网络负载很大，利用多级结构可以减少主节点的网络负载  二">
+<meta name="keywords" content="redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redis学习-复制">
+<meta property="og:url" content="http://www.elgong.top/2020/06/09/redis学习-复制/index.html">
 <meta property="og:site_name" content="elgong&#39;s Home.">
+<meta property="og:description" content="[toc]  Redis6-复制（由主到从） 当存在主从多个节点时，才会出现复制，且复制的方向只能由主节点流向从节点  [toc] 一、 redis 集群的拓扑结构主备结构-一主一从 可以只在从节点开启 AOF  读写分类结构-一主多从 慢查询可以 使用从节点，防止主节点的阻塞，提高并发性  解决网络负载过重-树状主从结构 一主多从，主节点的网络负载很大，利用多级结构可以减少主节点的网络负载  二">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-06-09T14:02:08.812Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="elgong&#39;s Home.">
+<meta name="twitter:title" content="redis学习-复制">
+<meta name="twitter:description" content="[toc]  Redis6-复制（由主到从） 当存在主从多个节点时，才会出现复制，且复制的方向只能由主节点流向从节点  [toc] 一、 redis 集群的拓扑结构主备结构-一主一从 可以只在从节点开启 AOF  读写分类结构-一主多从 慢查询可以 使用从节点，防止主节点的阻塞，提高并发性  解决网络负载过重-树状主从结构 一主多从，主节点的网络负载很大，利用多级结构可以减少主节点的网络负载  二">
 
 
 
@@ -137,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://www.elgong.top/categories/Java多态/">
+  <link rel="canonical" href="http://www.elgong.top/2020/06/09/redis学习-复制/">
 
 
 
 
 
-  <title>Category: Java多态 | elgong's Home.</title>
+  <title>redis学习-复制 | elgong's Home.</title>
   
 
 
@@ -171,7 +176,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband">
 		<a href="https://github.com/elgong"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 
@@ -300,53 +305,306 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Java多态<small>Category</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.elgong.top/2020/06/09/redis学习-复制/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elgong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="elgong's Home.">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/04/22/Java-向上转型-向下转型/" itemprop="url">
-              
-                <span itemprop="name">Java 向上转型&向下转型</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">redis学习-复制</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-04-22T11:53:28+08:00" content="2020-04-22">
-          04-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+		  
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-09T21:57:30+08:00">
+                2020-06-09
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/缓存中间件/" itemprop="url" rel="index">
+                    <span itemprop="name">缓存中间件</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/09/redis学习-复制/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/09/redis学习-复制/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  964 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[toc] </p>
+<h1 id="Redis6-复制（由主到从）"><a href="#Redis6-复制（由主到从）" class="headerlink" title="Redis6-复制（由主到从）"></a>Redis6-复制（由主到从）</h1><blockquote>
+<p>当存在主从多个节点时，才会出现复制，且复制的方向只能由主节点流向从节点</p>
+</blockquote>
+<p>[toc]</p>
+<h2 id="一、-redis-集群的拓扑结构"><a href="#一、-redis-集群的拓扑结构" class="headerlink" title="一、 redis 集群的拓扑结构"></a>一、 redis 集群的拓扑结构</h2><h3 id="主备结构-一主一从"><a href="#主备结构-一主一从" class="headerlink" title="主备结构-一主一从"></a>主备结构-一主一从</h3><ul>
+<li>可以只在从节点开启 AOF</li>
+</ul>
+<h3 id="读写分类结构-一主多从"><a href="#读写分类结构-一主多从" class="headerlink" title="读写分类结构-一主多从"></a>读写分类结构-一主多从</h3><blockquote>
+<p>慢查询可以 使用从节点，防止主节点的阻塞，提高并发性</p>
+</blockquote>
+<h3 id="解决网络负载过重-树状主从结构"><a href="#解决网络负载过重-树状主从结构" class="headerlink" title="解决网络负载过重-树状主从结构"></a>解决网络负载过重-树状主从结构</h3><blockquote>
+<p>一主多从，主节点的网络负载很大，利用多级结构可以减少主节点的网络负载</p>
+</blockquote>
+<h2 id="二、-复制涉及的环节"><a href="#二、-复制涉及的环节" class="headerlink" title="二、 复制涉及的环节"></a>二、 复制涉及的环节</h2><h3 id="建立复制"><a href="#建立复制" class="headerlink" title="建立复制"></a>建立复制</h3><p><strong>复制流的方向</strong>：只能从主节点流向从节点</p>
+<p><strong>配置</strong>： 只能从节点配置！</p>
+<ul>
+<li>配置文件中添加 <code>slaveof masterHost masterPort</code></li>
+<li>redis 启动命令后加入 <code>--slaveof masterHost masterPort</code></li>
+<li>直接执行该命令</li>
+</ul>
+<p><strong>查看复制的状态</strong>：<code>info replication</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; info replication</span><br><span class="line">    # Replication</span><br><span class="line">    role:master</span><br><span class="line">    connected_slaves:0</span><br><span class="line">    master_replid:923b3aeddad7f8966ea67a788dd7098fe8e99fca</span><br><span class="line">    master_replid2:0000000000000000000000000000000000000000</span><br><span class="line">    master_repl_offset:14</span><br><span class="line">    second_repl_offset:-1</span><br><span class="line">    repl_backlog_active:1</span><br><span class="line">    repl_backlog_size:1048576</span><br><span class="line">    repl_backlog_first_byte_offset:1</span><br><span class="line">    repl_backlog_histlen:14</span><br></pre></td></tr></table></figure></p>
+<h3 id="断开复制"><a href="#断开复制" class="headerlink" title="断开复制"></a>断开复制</h3><p><strong>直接断开复制关系，从节点自动升级为主节点</strong><br><code>slaveof no one</code></p>
+<h3 id="切换复制源"><a href="#切换复制源" class="headerlink" title="切换复制源"></a>切换复制源</h3><blockquote>
+<p>注意切换后，会先清空之前的缓存，然后重新复制<br><code>slaveof masterHost masterPort</code></p>
+</blockquote>
+<h3 id="复制的时间间隔粒度？"><a href="#复制的时间间隔粒度？" class="headerlink" title="复制的时间间隔粒度？"></a>复制的时间间隔粒度？</h3><p>控制参数 <code>repl-disable-tcp-nodelay</code> 默认关闭</p>
+<ul>
+<li>关闭时：主节点有新数据产生，会及时发送给从节点</li>
+<li>开启时：固定时间间隔发送给从节点，linux一般默认40ms</li>
+</ul>
+<h2 id="三、复制的具体流程-6步"><a href="#三、复制的具体流程-6步" class="headerlink" title="三、复制的具体流程 (6步)"></a>三、复制的具体流程 (6步)</h2><ol>
+<li>从节点 执行 <code>slaveof host master</code> <ul>
+<li>指令后，从节点保存主节点的信息（ip + port）</li>
+<li>信息可以通过 <code>info replication</code> 获取</li>
+</ul>
+</li>
+<li>从节点与主节点建立 socket 连接         <ul>
+<li>从节点开启定时任务来维护复制的逻辑</li>
+<li>连接不上，会断开重新连接</li>
+</ul>
+</li>
+<li>从节点 主动通信，发送 <code>ping</code></li>
+<li>需要 权限验证， <code>auth password</code> <ul>
+<li>requirepass是配置在主节点的，masterauth是配置在从节点</li>
+<li>具体在 redis.conf 中配置</li>
+</ul>
+</li>
+<li><p>主从同步数据（全量复制和部分复制）</p>
+</li>
+<li><p>修改命令的持续写入从节点</p>
+</li>
+</ol>
+<blockquote>
+<p>全量复制一般只在第一次复制，剩下的就是每次复制执行的命令</p>
+</blockquote>
+<p>下面详细讲述全量复制的过程：</p>
+<h3 id="psync指令-完成数据同步（包括全量和部分）"><a href="#psync指令-完成数据同步（包括全量和部分）" class="headerlink" title="psync指令 完成数据同步（包括全量和部分）"></a>psync指令 完成数据同步（包括全量和部分）</h3><p><strong>格式</strong>：<br><code>psync {runId}{offset}</code></p>
+<p><strong>runId</strong>:  主节点运行 id， 重启后会自动改变</p>
+<p><strong>offset</strong>: 从节点已经复试的数据偏移量，第一次默认为 -1</p>
+<h4 id="全量复制的流程"><a href="#全量复制的流程" class="headerlink" title="全量复制的流程"></a>全量复制的流程</h4><ol>
+<li>从节点发送 <code>psync</code> 进行同步， 无法得知主节点运行id，所以发送 <code>psync-1</code> </li>
+<li>主节点 发现<code>psync-1</code>,判定需要全量复制，返回 运行id 和 offset</li>
+<li>从节点保存 运行id 和 offset</li>
+<li>主节点执行 <code>bgsave</code>, 将产生的 <code>RDB</code> 文件发送到从节点</li>
+<li>同时主节点仍在处理命令，将命令写入了 缓冲区，再次把缓冲区的命令发送给 从节点（注意可能出现的缓冲区溢出，当写入超过1mb）</li>
+</ol>
+<h4 id="部分复制的流程"><a href="#部分复制的流程" class="headerlink" title="部分复制的流程"></a>部分复制的流程</h4><blockquote>
+<p>针对网络异常导致的命令丢失等，做出了优化，避免使用全量复制来解决少量数据的问题</p>
+</blockquote>
+<ol>
+<li>主从节点之间出现网络中断，并且超 <code>repl-timeout</code> 设定的时间，主节点可以得知断开了，写入命令都存在缓冲区</li>
+<li>当主从连接恢复，由于从节点保存了 主节点的id 和复制偏移值，直接作为 <code>psync</code>参数继续传递</li>
+</ol>
+<h2 id="四、心跳检测"><a href="#四、心跳检测" class="headerlink" title="四、心跳检测"></a>四、心跳检测</h2><blockquote>
+<p>主从节点连接后，会维护一个长连接，互相发送心跳命令</p>
+</blockquote>
+<p><strong>主节点</strong>：</p>
+<ul>
+<li>每10s发送一次 <code>ping</code>, 来检测从节点的状态</li>
+<li>参数 <code>repl-ping-slave-period</code> 可以设置时间间隔</li>
+</ul>
+<p><strong>从节点</strong>：</p>
+<ul>
+<li>每1s 发送一次 <code>replconf ack{offset}</code></li>
+<li>上报自身已经复制到的偏移量</li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+	
+	<div>
+      
+        
+      
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/redis/" rel="tag"><i class="fa fa-tag"></i> redis</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/01/redis-持久化/" rel="next" title="redis-持久化">
+                <i class="fa fa-chevron-left"></i> redis-持久化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -354,6 +612,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -374,8 +639,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -488,6 +762,22 @@ show_date_time();
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis6-复制（由主到从）"><span class="nav-text">Redis6-复制（由主到从）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-redis-集群的拓扑结构"><span class="nav-text">一、 redis 集群的拓扑结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主备结构-一主一从"><span class="nav-text">主备结构-一主一从</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读写分类结构-一主多从"><span class="nav-text">读写分类结构-一主多从</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决网络负载过重-树状主从结构"><span class="nav-text">解决网络负载过重-树状主从结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、-复制涉及的环节"><span class="nav-text">二、 复制涉及的环节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立复制"><span class="nav-text">建立复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#断开复制"><span class="nav-text">断开复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换复制源"><span class="nav-text">切换复制源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制的时间间隔粒度？"><span class="nav-text">复制的时间间隔粒度？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、复制的具体流程-6步"><span class="nav-text">三、复制的具体流程 (6步)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#psync指令-完成数据同步（包括全量和部分）"><span class="nav-text">psync指令 完成数据同步（包括全量和部分）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全量复制的流程"><span class="nav-text">全量复制的流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部分复制的流程"><span class="nav-text">部分复制的流程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、心跳检测"><span class="nav-text">四、心跳检测</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -701,6 +991,10 @@ show_date_time();
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
